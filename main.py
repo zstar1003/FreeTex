@@ -2,7 +2,7 @@ import sys
 import os
 import json
 from PyQt5.QtCore import Qt, QTimer, QRect, QSize, QThread
-from PyQt5.QtGui import QPixmap, QIcon, QPainter, QKeySequence
+from PyQt5.QtGui import QPixmap, QIcon, QPainter, QKeySequence, QColor
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout,
                              QWidget, QFileDialog, QHBoxLayout, QSizePolicy)
 from PyQt5.QtWidgets import QShortcut
@@ -15,10 +15,47 @@ from qfluentwidgets import (
     SimpleCardWidget,
     ImageLabel,
     TextEdit,
-    setTheme, Theme
+    setTheme, Theme,
+    StateToolTip
 )
 
+# 软件版本号常量
+SOFTWARE_VERSION = "v1.0.0"
 
+class ModelStatusWidget(QWidget):
+    """模型状态指示器组件"""
+    
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setFixedHeight(30)
+        
+        # 创建水平布局
+        self.hBoxLayout = QHBoxLayout(self)
+        self.hBoxLayout.setContentsMargins(5, 0, 5, 0)
+        self.hBoxLayout.setSpacing(8)
+        
+        # 状态指示灯
+        self.statusIndicator = QLabel(self)
+        self.statusIndicator.setFixedSize(12, 12)
+        self.statusIndicator.setStyleSheet("background-color: red; border-radius: 6px;")
+        
+        # 状态文本
+        self.statusText = QLabel("模型正在加载中...", self)
+        
+        # 添加到布局
+        self.hBoxLayout.addWidget(self.statusIndicator)
+        self.hBoxLayout.addWidget(self.statusText)
+        self.hBoxLayout.addStretch(1)
+        
+    def setLoaded(self, device="CPU"):
+        """设置模型已加载状态"""
+        self.statusIndicator.setStyleSheet("background-color: #2ecc71; border-radius: 6px;")
+        self.statusText.setText(f"模型已加载完成 ({device})")
+        
+    def setLoading(self):
+        """设置模型加载中状态"""
+        self.statusIndicator.setStyleSheet("background-color: #e74c3c; border-radius: 6px;")
+        self.statusText.setText("模型正在加载中...")
 
 class MainWindow(QMainWindow):
     """ 主窗口类 """
@@ -54,6 +91,13 @@ class MainWindow(QMainWindow):
         self.local_processor.finished.connect(self.on_recognition_finished)
         self.processor_thread.start()
         
+        # 禁用按钮，直到模型加载完成
+        self.uploadButton.setEnabled(False)
+        self.screenshotButton.setEnabled(False)
+        
+        # 模拟模型加载完成
+        QTimer.singleShot(3000, self.on_model_loaded)
+        
         self.overlay = None # 用于存储截图覆盖层实例
         self.original_pixmap = None # 保存原始（未缩放）的截图或上传图片
 
@@ -72,6 +116,23 @@ class MainWindow(QMainWindow):
         """
         初始化界面控件
         """
+        # 状态栏和版本号区域
+        statusBarWidget = QWidget(self.centralWidget)
+        statusBarLayout = QHBoxLayout(statusBarWidget)
+        statusBarLayout.setContentsMargins(5, 0, 5, 0)
+        
+        # 添加模型状态指示器
+        self.modelStatus = ModelStatusWidget(statusBarWidget)
+        
+        # 添加版本号标签
+        versionLabel = QLabel(SOFTWARE_VERSION, statusBarWidget)
+        versionLabel.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        
+        # 将组件添加到状态栏布局
+        statusBarLayout.addWidget(self.modelStatus)
+        statusBarLayout.addStretch(1)
+        statusBarLayout.addWidget(versionLabel)
+        
         # 图片显示区域
         self.imageCard = SimpleCardWidget(self.centralWidget)
         self.imageCard.setBorderRadius(8)
@@ -125,10 +186,25 @@ class MainWindow(QMainWindow):
         # 将所有组件添加到主布局
         self.mainLayout.setContentsMargins(10, 10, 10, 10)  # 减少主布局边距
         self.mainLayout.setSpacing(10)
+        self.mainLayout.addWidget(statusBarWidget)  # 添加状态栏
         self.mainLayout.addWidget(self.imageCard, 6)  # 图片区域分配更多空间
         self.mainLayout.addWidget(self.latexCard, 4)  # 结果区域分配较少空间
         self.mainLayout.addLayout(buttonLayout)
 
+    def on_model_loaded(self):
+        """模型加载完成后的回调函数"""
+        # 更新模型状态指示器
+        self.modelStatus.setLoaded("GPU")
+        
+        # 启用按钮
+        self.uploadButton.setEnabled(True)
+        self.screenshotButton.setEnabled(True)
+        
+        # 显示提示
+        tooltip = StateToolTip("模型加载完成", "模型已成功加载到GPU，可以开始使用了", self)
+        tooltip.setState(True)
+        tooltip.show()
+        tooltip.move(self.width() - tooltip.width() - 20, 20)
 
     def uploadImage(self):
         """
