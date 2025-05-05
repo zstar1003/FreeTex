@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+from latex2mathml.converter import convert
 from PyQt5.QtCore import Qt, QTimer, QRect, QSize, QThread, pyqtSignal, QMetaObject, Q_ARG, QPoint
 from PyQt5.QtGui import QPixmap, QIcon, QPainter, QKeySequence, QColor, QImage
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout,
@@ -8,7 +9,8 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel, QVB
 from PyQt5.QtWidgets import QShortcut
 from tools.screenshot import ScreenshotOverlay
 from tools.clipboard_handler import ClipboardHandler
-# Directly import LocalProcessor, but its heavy work will be done on another thread
+
+
 from tools.local_processor import LocalProcessor
 from qfluentwidgets import (
     PushButton as FluentPushButton,
@@ -21,7 +23,7 @@ from qfluentwidgets import (
 )
 
 # 软件版本号常量
-SOFTWARE_VERSION = "v1.0.0"
+SOFTWARE_VERSION = "v0.1.0"
 
 class ModelStatusWidget(QWidget):
     """模型状态指示器组件"""
@@ -208,15 +210,23 @@ class MainWindow(QMainWindow):
         self.screenshotButton.setIcon(FIF.CUT) # Use Fluent Icon
         self.screenshotButton.clicked.connect(self.start_screenshot_process)
         
+        # 复制识别结果(Latex) 按钮
         self.copyButton = FluentPushButton('复制识别结果(Latex)', self.centralWidget)
         self.copyButton.setIcon(FIF.COPY) # 使用复制图标
         self.copyButton.clicked.connect(self.copy_latex_result)
         self.copyButton.setEnabled(False) # 初始禁用
+
+        # 复制识别结果(Word/MathML) 按钮
+        self.copyWordButton = FluentPushButton('复制识别结果(Word)', self.centralWidget)
+        self.copyWordButton.setIcon(FIF.DOCUMENT) # 使用文档图标，或者FIF.PASTE, FIF.COPY
+        self.copyWordButton.clicked.connect(self.copy_mathml_result) # 连接到新的槽函数
+        self.copyWordButton.setEnabled(False) # 初始禁用
         
         # 添加按钮到布局
         buttonLayout.addWidget(self.uploadButton)
         buttonLayout.addWidget(self.screenshotButton)
         buttonLayout.addWidget(self.copyButton)
+        buttonLayout.addWidget(self.copyWordButton)
         buttonLayout.addStretch(1) # Push buttons to the left
 
         # 将所有组件添加到主布局
@@ -608,14 +618,78 @@ class MainWindow(QMainWindow):
             tooltip.move(self.copyButton.mapToGlobal(QPoint(self.copyButton.width() // 2 - tooltip.width() // 2, -tooltip.height() - 10)))
             tooltip.show()
 
+
+    def copy_mathml_result(self):
+        """将识别出的LaTeX结果转换为MathML并复制到剪贴板"""
+        latex_text = self.latexEdit.toPlainText().strip() # 获取并清理文本
+        # 检查文本是否有效（非空，不是占位符，不是错误信息）
+        is_placeholder_or_empty = (not latex_text) or (latex_text == self.latexEdit.placeholderText().strip())
+        is_error_message = latex_text.startswith("识别失败:")
+
+        if not is_placeholder_or_empty and not is_error_message:
+            try:
+                # 使用 latex2mathml 库进行转换
+                mathml_text = convert(latex_text)
+                print(f"Converted LaTeX to MathML:\n{mathml_text[:200]}...") # Debug print (limit output length)
+
+                # 复制 MathML 到剪贴板
+                clipboard = QApplication.clipboard()
+                clipboard.setText(mathml_text)
+                print("MathML result copied to clipboard for Word.")
+
+                # 显示复制成功提示
+                tooltip = StateToolTip("复制成功", "MathML 代码已复制到剪贴板，可粘贴到Word", self)
+                tooltip.setState(True) # True shows success icon
+                # Position tooltip near this button
+                # Map the center of the button to global coordinates, then shift up and left/right by half tooltip size
+                button_center_global = self.copyWordButton.mapToGlobal(QPoint(self.copyWordButton.width() // 2, self.copyWordButton.height() // 2))
+                tooltip_pos_x = button_center_global.x() - tooltip.width() // 2
+                tooltip_pos_y = button_center_global.y() - tooltip.height() - 10 # Position above the button
+                tooltip.move(tooltip_pos_x, tooltip_pos_y)
+                tooltip.show()
+
+            except Exception as e:
+                error_msg = f"MathML转换失败: {str(e)}"
+                print(error_msg)
+                import traceback
+                traceback.print_exc() # Print traceback for conversion errors
+                # 显示转换失败提示
+                tooltip = StateToolTip("复制失败", error_msg, self)
+                tooltip.setState(False)
+                # Position tooltip near this button
+                button_center_global = self.copyWordButton.mapToGlobal(QPoint(self.copyWordButton.width() // 2, self.copyWordButton.height() // 2))
+                tooltip_pos_x = button_center_global.x() - tooltip.width() // 2
+                tooltip_pos_y = button_center_global.y() - tooltip.height() - 10
+                tooltip.move(tooltip_pos_x, tooltip_pos_y)
+                tooltip.show()
+        else:
+             print("No valid LaTeX result to convert/copy to MathML.")
+             # 显示无结果提示
+             tooltip = StateToolTip("无结果", "没有可复制的LaTeX代码", self)
+             tooltip.setState(False)
+             # Position tooltip near this button
+             button_center_global = self.copyWordButton.mapToGlobal(QPoint(self.copyWordButton.width() // 2, self.copyWordButton.height() // 2))
+             tooltip_pos_x = button_center_global.x() - tooltip.width() // 2
+             tooltip_pos_y = button_center_global.y() - tooltip.height() - 10
+             tooltip.move(tooltip_pos_x, tooltip_pos_y)
+             tooltip.show()
+
+
     def update_copy_button_state(self):
         """根据latexEdit的内容启用/禁用复制按钮"""
         # 获取当前文本，忽略前后空白
         text = self.latexEdit.toPlainText().strip()
         # 如果文本非空，且不等于占位符文本，则启用按钮
-        # 检查占位符是为了避免在没有识别结果时复制占位符文字
-        is_placeholder = (text == self.latexEdit.placeholderText().strip())
-        self.copyButton.setEnabled(bool(text) and not is_placeholder)
+        is_placeholder_or_empty = (not text) or (text == self.latexEdit.placeholderText().strip())
+        # Also check if the text starts with "识别失败:" as those are not valid LaTeX results
+        is_error_message = text.startswith("识别失败:")
+        # 只有当文本非空、非占位符且不是错误信息时才启用复制按钮
+        should_enable = not is_placeholder_or_empty and not is_error_message
+
+        self.copyButton.setEnabled(should_enable)
+        self.copyWordButton.setEnabled(should_enable)
+
+
 
 if __name__ == '__main__':
     # 启用高 DPI 支持 (如果开启，可能会影响多屏截图时的准确性)
