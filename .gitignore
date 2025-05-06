@@ -154,3 +154,4 @@ cython_debug/
 
 models/unimernet_small
 logs/
+output/

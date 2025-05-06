@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeTex</title>
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="FreeTex Logo" class="animate__animated animate__fadeInDown">
+            </div>
+            <ul>
+                <li><a href="#features" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">特点</a></li>
+                <li><a href="#usage" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">使用方式</a></li>
+                <li><a href="https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">下载</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content animate__animated animate__fadeInUp">
+            <h1>FreeTex</h1>
+            <p>免费的公式智能识别软件，将图像公式转换为可编辑的 LaTeX</p>
+            <div class="badges animate__animated animate__fadeInUp animate__delay-1s">
+                <img src="https://img.shields.io/badge/版本-0.1.0-blue" alt="版本">
+                <img src="https://img.shields.io/badge/许可证-AGPL3.0-green" alt="许可证">
+            </div>
+            <a href="https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888" class="cta-button animate__animated animate__pulse animate__infinite">立即下载(windows_x64)</a>
+        </div>
+    </section>
+
+    <!-- 更新后的主要特点部分 -->
+    <section id="features" class="features">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>主要特性</h2>
+                <p>FreeTex 旨在提供高效、准确且易于使用的公式识别体验。</p> <!-- 这里可以根据实际情况修改描述 -->
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in">
+                    <div class="icon">🌐</div> <!-- 使用合适的图标或 Emoji -->
+                    <h3>无需联网免排队</h3>
+                    <p>采用本地部署的模型，无需联网调用，数据隐私得到充分保障。</p>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon">⚡</div>
+                    <h3>自适应显卡加速</h3>
+                    <p>自动调用独立显卡进行推理，秒出识别结果。</p>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon">✍️</div>
+                    <h3>多类型图像识别</h3>
+                    <p>支持手写、印刷、扫描等多种类型的图像识别。</p>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in">
+                    <div class="icon">🖱️</div>
+                    <h3>傻瓜操作超简单</h3>
+                    <p>支持上传图像、截图、粘贴三种操作模式，并支持快捷键，提升效率。</p>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon">📋</div>
+                    <h3>结果导出多格式</h3>
+                    <p>识别结果支持直接一键复制成word或latex格式，无需额外操作。</p>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon">💻</div>
+                    <h3>软件多平台支持</h3>
+                    <p>使用python构建，支持Windows、Linux、MacOS等不同平台运行。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 主要特点部分结束 -->
+
+    <section id="usage" class="content-section">
+        <div class="container"> <!-- 添加 container div -->
+            <h2 class="animate__animated">📦 使用方式</h2>
+            <div class="usage-tabs animate__animated">
+                <button class="tab-link active" onclick="openTab(event, 'quick-start')">快速使用</button>
+                <button class="tab-link" onclick="openTab(event, 'source-run')">源码运行</button>
+            </div>
+
+            <div id="quick-start" class="tab-content animate__animated" style="display: block;">
+            <h3>1. 快速使用</h3>
+            <p>1. Windows系统：下载软件安装包 (此处可添加链接)</p>
+            <p>2. 打开软件，开始使用</p>
+            <h4>默认快捷键 (可通过config.json文件修改):</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>功能</th>
+                  <th>快捷键</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>截图</td>
+                  <td><code>Ctrl+Alt+Q</code></td>
+                </tr>
+                <tr>
+                  <td>上传</td>
+                  <td><code>Ctrl+U</code></td>
+                </tr>
+                <tr>
+                  <td>粘贴</td>
+                  <td><code>Ctrl+V</code></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+
+        <div id="source-run" class="tab-content animate__animated">
+            <h3>2. 源码运行</h3>
+            <h4>配置环境</h4>
+            <pre><code>conda create -n freetex python=3.10
+conda activate freetex</code></pre>
+            <h4>安装依赖</h4>
+            <pre><code>pip install -r requirements.txt</code></pre>
+            <p>由于unimernet的requirements会自动安装最新CPU版的pytorch，需要卸载并重新安装gpu版本的pytorch(及对应的torchvision):</p>
+            <pre><code>pip install torch==2.4.0 torchvision==0.19.0 --index-url https://download.pytorch.org/whl/cu118</code></pre>
+            <h4>下载模型</h4>
+            <p>下载unimernet_small模型放置在<code>models</code>下:</p>
+            <pre><code>cd models
+git lfs install
+git clone https://huggingface.co/wanderkid/unimernet_small</code></pre>
+            <h4>运行软件</h4>
+            <pre><code>python main.py</code></pre>
+        </div> <!-- 闭合 container div -->
+    </section>
+
+    <footer>
+        <p>许可证: AGPL 3.0 | &copy; 2025 FreeTex</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
