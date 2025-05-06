@@ -36,6 +36,9 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 - 软件多平台支持
   使用python构建，支持Windows、Linux、MacOS等不同平台运行
 
+视频演示及操作教程：
+
+[![FreeTex：免费的智能公式识别神器](https://i0.hdslb.com/bfs/archive/54175a1a4552c6236d05188bb63ff9ff26ccea54.jpg@672w_378h_1c.avif)](https://www.bilibili.com/video/BV1zPV2zVEMG)
 
 ## 📦 使用方式
 
@@ -45,13 +48,7 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 
 2. 打开软件，开始使用
 
-默认快捷键(可通过config.json文件修改快捷键)：
-
-| 功能        | 快捷键       |
-|-------------|-------------|
-| screenshot  | `Ctrl+Alt+Q` |
-| upload      | `Ctrl+U`    |
-| paste       | `Ctrl+V`    |
+具体使用方式可参考：https://blog.csdn.net/qq1198768105/article/details/147739708
 
 ### 2. 源码运行
 
@@ -72,6 +69,7 @@ pip install -r requirements.txt
 ```bash
 pip install torch==2.4.0 torchvision==0.19.0 --index-url https://download.pytorch.org/whl/cu118
 ```
+
 #### 下载模型
 
 下载unimernet_small模型放置在`models`下:
@@ -113,12 +111,11 @@ d:/Code/FreeTex/
     └── local_processor.py      # 本地模型处理器
 ```
 
-
 ## 📄 社群
 如果有产品使用问题或建议，可加入交流群进行讨论。
 
 <div align="center">
-  <img src="docs/images/group.jpg" width="300" alt="交流群二维码">
+  <img src="docs/images/group.jpg" width="200" alt="交流群二维码">
 </div>
 
 ## 🚀 鸣谢
