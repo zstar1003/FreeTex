@@ -77,7 +77,8 @@ class MainWindow(QMainWindow):
         """
         super().__init__()
         self.initWindow()
-        
+
+        os.makedirs('logs', exist_ok=True)
         # 初始化日志
         logging.basicConfig(
             level=logging.INFO,
@@ -87,7 +88,7 @@ class MainWindow(QMainWindow):
                 logging.StreamHandler()
             ]
         )
-        self.logger = logging.getLogger('logs/FreeTex.log')
+        self.logger = logging.getLogger('FreeTex')
         
         # 设置窗口背景颜色
         self.setStyleSheet("background-color: #f0f4f9;")
