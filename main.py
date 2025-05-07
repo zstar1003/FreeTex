@@ -76,7 +76,6 @@ class MainWindow(QMainWindow):
         设置窗口属性、布局和控件。
         """
         super().__init__()
-        self.initWindow()
 
         os.makedirs('logs', exist_ok=True)
         # 初始化日志
@@ -128,6 +127,8 @@ class MainWindow(QMainWindow):
         # 启动处理器线程 (模型加载将在线程启动后自动触发)
         self.processor_thread.start()
 
+        # 初始化窗口
+        self.initWindow()
         # 初始化UI状态：模型加载中，禁用相关按钮
         self.modelStatus.setLoading()
         self.uploadButton.setEnabled(False)
