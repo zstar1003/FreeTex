@@ -44,11 +44,24 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 
 ### 1. 快速使用
 
-1. windows系统：下载软件安装包：[https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888](https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888) (提取码: 8888) 
+1. windows系统：下载软件安装包：
 
-2. 打开软件，开始使用
+- [百度网盘下载地址](https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888) (提取码: 8888) 
+
+- [夸克网盘下载地址](https://pan.quark.cn/s/84822bce7b53)
+
+2. 安装软件，开始使用
 
 具体使用方式可参考：https://blog.csdn.net/qq1198768105/article/details/147739708
+
+3. 部分机型可能出现启动闪退的情况，日志报错：
+
+```c
+OSError : [WinError 126]找不到指定的模块。interns/torch/lib/fbgemm.dll
+```
+
+解决方式可参考：https://blog.csdn.net/qq1198768105/article/details/147767314
+
 
 ### 2. 源码运行
 
