@@ -50,6 +50,8 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 
 - [夸克网盘下载地址](https://pan.quark.cn/s/84822bce7b53)
 
+- [阿里网盘下载地址](https://www.alipan.com/s/mYys8oFDdhb)
+
 2. 安装软件，开始使用
 
 具体使用方式可参考：https://blog.csdn.net/qq1198768105/article/details/147739708
