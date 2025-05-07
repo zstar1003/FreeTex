@@ -1,0 +1,10 @@
+colorthief==0.2.1
+darkdetect==0.8.0
+latex2mathml
+numpy==1.24.4
+Pillow
+PyQt5-Qt5
+PyQt5-sip
+pyqt5_frameless_window
+scipy
+unimernet

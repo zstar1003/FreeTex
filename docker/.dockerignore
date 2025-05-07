@@ -1,0 +1,11 @@
+logs/
+output/
+models/unimernet_small/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+.vscode
+.idea
