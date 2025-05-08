@@ -1,0 +1,28 @@
+[project]
+name = "FreeTeX"
+version = "0.1.0"
+description = "A free image to TeX app"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "colorthief==0.2.1",
+    "darkdetect==0.8.0",
+    "latex2mathml==3.78.0",
+    "numpy>=1.24.4",
+    "pillow==11.2.1",
+    "pyqt5==5.15.11",
+    "pyqt5-frameless-window==0.6.0",
+    "pyqt5-sip==12.17.0",
+    "scipy==1.15.2",
+    "unimernet==0.2.3",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.pku.edu.cn/pypi/web/simple"
+default = true
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.13.0",
+    "pyinstaller-hooks-contrib>=2025.4",
+]
