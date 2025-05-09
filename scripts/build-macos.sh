@@ -16,7 +16,7 @@ mkdir -p dist/dmg
 rm -rf dist/dmg/*
 
 # Copy the app bundle to the dmg folder.
-cp -r "dist/FreeTeX.app" dist/dmg
+cp -a "dist/FreeTeX.app" dist/dmg
 
 # If the DMG already exists, delete it.
 test -f "dist/FreeTeX.dmg" && rm "dist/FreeTeX.dmg"
