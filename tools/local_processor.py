@@ -1,12 +1,11 @@
 import torch
 import warnings
-import numpy as np
 import argparse
 import logging
 from PyQt5.QtGui import QPixmap, QImage
-from PyQt5.QtCore import QObject, pyqtSignal, QThread, QBuffer, QByteArray, QIODevice
+from PyQt5.QtCore import QObject, pyqtSignal, QBuffer, QByteArray, QIODevice
 from PIL import Image
-from io import BytesIO 
+from io import BytesIO
 
 warnings.filterwarnings("ignore")
 
@@ -18,8 +17,9 @@ class LocalProcessor(QObject):
     1. 加载本地模型进行图像识别
     2. 通过信号返回识别结果
     """
+
     finished = pyqtSignal(str)  # 识别完成信号
-    model_loaded = pyqtSignal(str) # 模型加载完成信号，附带设备信息
+    model_loaded = pyqtSignal(str)  # 模型加载完成信号，附带设备信息
 
     def __init__(self, cfg_path):
         """
@@ -31,7 +31,7 @@ class LocalProcessor(QObject):
         self.model = None
         self.vis_processor = None
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.logger = logging.getLogger('logs/FreeTex.log')
+        self.logger = logging.getLogger("logs/FreeTex.log")
         self.logger.debug(f"LocalProcessor 初始化完成. 使用设备: {self.device}")
 
     def start_loading(self):
@@ -70,10 +70,11 @@ class LocalProcessor(QObject):
         self.model = task.build_model(cfg).to(self.device)
         self.logger.info("模型已构建并移动到设备")
         # Load processor
-        self.vis_processor = load_processor('formula_image_eval',
-                                           cfg.config.datasets.formula_rec_eval.vis_processor.eval)
+        self.vis_processor = load_processor(
+            "formula_image_eval",
+            cfg.config.datasets.formula_rec_eval.vis_processor.eval,
+        )
         self.logger.info("视觉处理器已加载")
-
 
     def process_image(self, image_path):
         """
@@ -88,16 +89,18 @@ class LocalProcessor(QObject):
                 return
 
             self.logger.info(f"正在处理图像路径: {image_path}")
-            raw_image = Image.open(image_path).convert("RGB") # Ensure RGB
+            raw_image = Image.open(image_path).convert("RGB")  # Ensure RGB
             image_tensor = self.vis_processor(raw_image).unsqueeze(0).to(self.device)
             self.logger.debug("图像已通过视觉处理器处理")
 
-            with torch.no_grad(): # Inference should be done without gradient calculation
-                 output = self.model.generate({"image": image_tensor})
+            with (
+                torch.no_grad()
+            ):  # Inference should be done without gradient calculation
+                output = self.model.generate({"image": image_tensor})
             self.logger.debug("模型推理完成")
 
             result = output["pred_str"][0]
-            self.logger.info(f'路径识别结果:\n{result}')
+            self.logger.info(f"路径识别结果:\n{result}")
             self.finished.emit(result)
         except Exception as e:
             error_msg = f"识别失败 (路径): {str(e)}"
@@ -117,7 +120,7 @@ class LocalProcessor(QObject):
             q_image = pixmap.toImage()
 
             if q_image.isNull():
-                 raise ValueError("QPixmap转换为QImage失败，结果为null")
+                raise ValueError("QPixmap转换为QImage失败，结果为null")
 
             byte_array = QByteArray()
             buffer_device = QBuffer(byte_array)
@@ -126,17 +129,24 @@ class LocalProcessor(QObject):
             try:
                 # Open the buffer for writing
                 if not buffer_device.open(QIODevice.WriteOnly):
-                     raise IOError("无法打开QBuffer进行写入")
+                    raise IOError("无法打开QBuffer进行写入")
 
                 # Ensure the QImage is in a format suitable for saving to PNG
-                safe_formats = (QImage.Format_ARGB32, QImage.Format_RGB32, QImage.Format_ARGB32_Premultiplied, QImage.Format_RGB888)
+                safe_formats = (
+                    QImage.Format_ARGB32,
+                    QImage.Format_RGB32,
+                    QImage.Format_ARGB32_Premultiplied,
+                    QImage.Format_RGB888,
+                )
                 if q_image.format() not in safe_formats:
-                     self.logger.debug(f"将QImage从格式{q_image.format()}转换为Format_ARGB32")
-                     q_image = q_image.convertToFormat(QImage.Format_ARGB32)
-                     if q_image.isNull():
-                          raise ValueError("QImage格式转换失败")
+                    self.logger.debug(
+                        f"将QImage从格式{q_image.format()}转换为Format_ARGB32"
+                    )
+                    q_image = q_image.convertToFormat(QImage.Format_ARGB32)
+                    if q_image.isNull():
+                        raise ValueError("QImage格式转换失败")
                 else:
-                     self.logger.debug(f"QImage格式{q_image.format()}适合保存")
+                    self.logger.debug(f"QImage格式{q_image.format()}适合保存")
 
                 # Save the QImage to the QBuffer as a PNG file
                 success = q_image.save(buffer_device, "PNG")
@@ -147,21 +157,25 @@ class LocalProcessor(QObject):
             finally:
                 # Always ensure the buffer is closed
                 if buffer_device.isOpen():
-                     buffer_device.close()
+                    buffer_device.close()
 
             # Get the byte array from the buffer after saving
             byte_array_data = byte_array.data()
             if not byte_array_data:
-                 raise IOError("保存QImage后QBuffer中没有数据")
+                raise IOError("保存QImage后QBuffer中没有数据")
 
-            self.logger.debug(f"QImage已保存为PNG到QBuffer。缓冲区大小: {len(byte_array_data)}字节")
+            self.logger.debug(
+                f"QImage已保存为PNG到QBuffer。缓冲区大小: {len(byte_array_data)}字节"
+            )
 
             # Open the image from the buffer using PIL
             buffer = BytesIO(byte_array_data)
             pil_image = Image.open(buffer)
             pil_image = pil_image.convert("RGB")
 
-            self.logger.debug(f"QPixmap已通过QBuffer转换为PIL Image。尺寸: {pil_image.size}, 模式: {pil_image.mode}")
+            self.logger.debug(
+                f"QPixmap已通过QBuffer转换为PIL Image。尺寸: {pil_image.size}, 模式: {pil_image.mode}"
+            )
 
             # Process the image using the visual processor
             image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
@@ -173,12 +187,13 @@ class LocalProcessor(QObject):
             self.logger.debug("模型推理完成")
 
             result = output["pred_str"][0]
-            self.logger.info(f'QPixmap识别结果:\n{result}')
+            self.logger.info(f"QPixmap识别结果:\n{result}")
             self.finished.emit(result)
 
         except Exception as e:
             error_msg = f"识别失败 (pixmap): {str(e)}"
             self.logger.error(error_msg)
             import traceback
+
             self.logger.error(traceback.format_exc())
             self.finished.emit(error_msg)

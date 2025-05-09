@@ -2,11 +2,34 @@ import sys
 import os
 import json
 import logging
+from typing import List
 from latex2mathml.converter import convert
-from PyQt5.QtCore import Qt, QTimer, QRect, QSize, QThread, pyqtSignal, QMetaObject, Q_ARG, QPoint
-from PyQt5.QtGui import QPixmap, QIcon, QPainter, QKeySequence, QColor, QImage
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout,
-                             QWidget, QFileDialog, QHBoxLayout, QSizePolicy)
+
+import resources  # noqa: F401
+
+
+from PyQt5.QtCore import Qt, QTimer, QThread, pyqtSignal, QPoint
+from PyQt5.QtGui import (
+    QPixmap,
+    QIcon,
+    QPainter,
+    QKeySequence,
+    QImage,
+    QFontDatabase,
+    QFont,
+)
+from PyQt5.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QLabel,
+    QVBoxLayout,
+    QWidget,
+    QFileDialog,
+    QHBoxLayout,
+    QSizePolicy,
+)
+
+
 from PyQt5.QtWidgets import QShortcut
 from tools.screenshot import ScreenshotOverlay
 from tools.clipboard_handler import ClipboardHandler
@@ -18,18 +41,28 @@ from qfluentwidgets import (
     SimpleCardWidget,
     ImageLabel,
     TextEdit,
-    setTheme, Theme,
-    StateToolTip
+    StateToolTip,
 )
 
 # 软件版本号常量
 SOFTWARE_VERSION = "v0.1.0"
+
+
+def resource_path(filename: str) -> str:
+    if getattr(sys, "frozen", False):
+        # Running in a PyInstaller bundle
+        return os.path.join(sys._MEIPASS, filename)
+    else:
+        # Running in normal Python environment
+        return os.path.join(os.path.abspath("."), filename)
+
 
 class ModelStatusWidget(QWidget):
     """模型状态指示器组件"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
+
         self.setFixedHeight(30)
 
         # 创建水平布局
@@ -52,22 +85,29 @@ class ModelStatusWidget(QWidget):
 
     def setLoaded(self, device_info=""):
         """设置模型已加载状态"""
-        self.statusIndicator.setStyleSheet("background-color: #2ecc71; border-radius: 6px;") # Green color
+        self.statusIndicator.setStyleSheet(
+            "background-color: #2ecc71; border-radius: 6px;"
+        )  # Green color
         self.statusText.setText(f"模型已加载完成 ({device_info})")
 
     def setLoading(self):
         """设置模型加载中状态"""
-        self.statusIndicator.setStyleSheet("background-color: #e74c3c; border-radius: 6px;") # Red color
+        self.statusIndicator.setStyleSheet(
+            "background-color: #e74c3c; border-radius: 6px;"
+        )  # Red color
         self.statusText.setText("模型正在加载中...")
 
     def setLoadingFailed(self, error_info=""):
         """设置模型加载失败状态"""
-        self.statusIndicator.setStyleSheet("background-color: #f39c12; border-radius: 6px;") # Orange color
+        self.statusIndicator.setStyleSheet(
+            "background-color: #f39c12; border-radius: 6px;"
+        )  # Orange color
         self.statusText.setText(f"模型加载失败: {error_info}")
 
 
 class MainWindow(QMainWindow):
-    """ 主窗口类 """
+    """主窗口类"""
+
     process_request = pyqtSignal(QPixmap)
 
     def __init__(self):
@@ -77,20 +117,20 @@ class MainWindow(QMainWindow):
         """
         super().__init__()
 
-        os.makedirs('logs', exist_ok=True)
+        # os.makedirs("logs", exist_ok=True)
         # 初始化日志
         logging.basicConfig(
             level=logging.INFO,
-            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
             handlers=[
-                logging.FileHandler('logs/FreeTex.log', encoding='utf-8'), 
-                logging.StreamHandler()
-            ]
+                # logging.FileHandler("logs/FreeTex.log", encoding="utf-8"),
+                logging.StreamHandler(),
+            ],
         )
-        self.logger = logging.getLogger('FreeTex')
-        
+        self.logger = logging.getLogger("FreeTex")
+
         # 设置窗口背景颜色
-        self.setStyleSheet("background-color: #f0f4f9;")
+        self.setStyleSheet("background-color: #f0f0f0")
         # 加载配置文件
         self.config = self.load_config()
 
@@ -110,7 +150,7 @@ class MainWindow(QMainWindow):
         # 初始化本地处理器和线程
         self.processor_thread = QThread()
         # 创建LocalProcessor实例，此时不会加载模型
-        self.local_processor = LocalProcessor("demo.yaml")
+        self.local_processor = LocalProcessor(resource_path("demo.yaml"))
         # 将处理器移动到新线程
         self.local_processor.moveToThread(self.processor_thread)
 
@@ -134,22 +174,21 @@ class MainWindow(QMainWindow):
         self.uploadButton.setEnabled(False)
         self.screenshotButton.setEnabled(False)
 
-        self.overlay = None # 用于存储截图覆盖层实例
-        self.original_pixmap = None # 保存原始（未缩放）的截图或上传图片
-
+        self.overlay = None  # 用于存储截图覆盖层实例
+        self.original_pixmap = None  # 保存原始（未缩放）的截图或上传图片
 
     def initWindow(self):
         """
         初始化窗口设置
         """
         self.resize(800, 700)
-        self.setWindowTitle('FreeTex - 免费的智能公式识别神器')
+        self.setWindowTitle("FreeTex - 免费的智能公式识别神器")
 
         icon_path = "images/icon.ico"
         if os.path.exists(icon_path):
-             self.setWindowIcon(QIcon(icon_path))
+            self.setWindowIcon(QIcon(icon_path))
         else:
-             self.logger.warning(f"图标文件未找到: {icon_path}")
+            self.logger.warning(f"图标文件未找到: {icon_path}")
 
     def initWidgets(self):
         """
@@ -166,6 +205,7 @@ class MainWindow(QMainWindow):
         # 添加版本号标签
         versionLabel = QLabel(SOFTWARE_VERSION, statusBarWidget)
         versionLabel.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        versionLabel.setStyleSheet("color: black;")
 
         # 将组件添加到状态栏布局
         statusBarLayout.addWidget(self.modelStatus)
@@ -193,7 +233,7 @@ class MainWindow(QMainWindow):
         self.latexCard.setBorderRadius(8)
 
         self.latexEdit = TextEdit(self.latexCard)
-        self.latexEdit.setPlaceholderText('识别出的 LaTeX 公式将显示在这里')
+        self.latexEdit.setPlaceholderText("识别出的 LaTeX 公式将显示在这里")
         self.latexEdit.setReadOnly(True)
         self.latexEdit.setMinimumHeight(100)
         self.latexEdit.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
@@ -207,60 +247,60 @@ class MainWindow(QMainWindow):
         buttonLayout.setSpacing(10)
 
         # 上传图片按钮
-        self.uploadButton = FluentPushButton('上传图片', self.centralWidget)
+        self.uploadButton = FluentPushButton("上传图片", self.centralWidget)
         self.uploadButton.setIcon(FIF.PHOTO)
         self.uploadButton.clicked.connect(self.uploadImage)
 
         # 截图按钮
-        self.screenshotButton = FluentPushButton('截图', self.centralWidget)
+        self.screenshotButton = FluentPushButton("截图", self.centralWidget)
         self.screenshotButton.setIcon(FIF.CUT)
         self.screenshotButton.clicked.connect(self.start_screenshot_process)
-        
+
         # 复制识别结果(Latex) 按钮
-        self.copyButton = FluentPushButton('复制识别结果(Latex)', self.centralWidget)
-        self.copyButton.setIcon(FIF.COPY) # 使用复制图标
+        self.copyButton = FluentPushButton("复制识别结果(Latex)", self.centralWidget)
+        self.copyButton.setIcon(FIF.COPY)  # 使用复制图标
         self.copyButton.clicked.connect(self.copy_latex_result)
-        self.copyButton.setEnabled(False) # 初始禁用
+        self.copyButton.setEnabled(False)  # 初始禁用
 
         # 复制识别结果(Word/MathML) 按钮
-        self.copyWordButton = FluentPushButton('复制识别结果(Word)', self.centralWidget)
-        self.copyWordButton.setIcon(FIF.DOCUMENT) # 使用文档图标
+        self.copyWordButton = FluentPushButton("复制识别结果(Word)", self.centralWidget)
+        self.copyWordButton.setIcon(FIF.DOCUMENT)  # 使用文档图标
         self.copyWordButton.clicked.connect(self.copy_mathml_result)
-        self.copyWordButton.setEnabled(False) # 初始禁用
-        
+        self.copyWordButton.setEnabled(False)  # 初始禁用
+
         # 添加按钮到布局
         buttonLayout.addWidget(self.uploadButton)
         buttonLayout.addWidget(self.screenshotButton)
         buttonLayout.addWidget(self.copyButton)
         buttonLayout.addWidget(self.copyWordButton)
-        buttonLayout.addStretch(1) 
+        buttonLayout.addStretch(1)
 
         # 将所有组件添加到主布局
         self.mainLayout.setContentsMargins(10, 10, 10, 10)
         self.mainLayout.setSpacing(10)
         self.mainLayout.addWidget(statusBarWidget)
-        self.mainLayout.addWidget(self.imageCard, 6) 
+        self.mainLayout.addWidget(self.imageCard, 6)
         self.mainLayout.addWidget(self.latexCard, 4)
         self.mainLayout.addLayout(buttonLayout)
 
         self.latexEdit.textChanged.connect(self.update_copy_button_state)
-        
+
     def on_model_loading_finished(self, device_info):
         """模型加载完成后的回调函数"""
         self.logger.info(f"接收到model_loaded信号. 设备: {device_info}")
         if "失败" in device_info:
-             self.modelStatus.setLoadingFailed(device_info)
-             self.uploadButton.setEnabled(False)
-             self.screenshotButton.setEnabled(False)
-             tooltip_text = f"模型加载失败: {device_info}"
-             tooltip_state = False
+            self.modelStatus.setLoadingFailed(device_info)
+            self.uploadButton.setEnabled(False)
+            self.screenshotButton.setEnabled(False)
+            tooltip_text = f"模型加载失败: {device_info}"
+            tooltip_state = False
         else:
-             self.modelStatus.setLoaded(device_info)
-             self.uploadButton.setEnabled(True)
-             self.screenshotButton.setEnabled(True)
-             self.copyButton.setEnabled(True)
-             tooltip_text = f"模型加载完成: {device_info}"
-             tooltip_state = True
+            self.modelStatus.setLoaded(device_info)
+            self.uploadButton.setEnabled(True)
+            self.screenshotButton.setEnabled(True)
+            self.copyButton.setEnabled(True)
+            tooltip_text = f"模型加载完成: {device_info}"
+            tooltip_state = True
 
         self.update_copy_button_state()
         # 显示提示
@@ -268,7 +308,6 @@ class MainWindow(QMainWindow):
         tooltip.setState(tooltip_state)
         tooltip.show()
         tooltip.move(self.width() - tooltip.width() - 20, 20)
-
 
     def uploadImage(self):
         """
@@ -279,7 +318,7 @@ class MainWindow(QMainWindow):
             self,
             "选择图片",
             ".",
-            "Image Files (*.png *.jpg *.bmp *.jpeg);;All Files (*)"
+            "Image Files (*.png *.jpg *.bmp *.jpeg);;All Files (*)",
         )
         if fileName:
             pixmap = QPixmap(fileName)
@@ -289,9 +328,8 @@ class MainWindow(QMainWindow):
             else:
                 self.logger.error(f"无法加载图片: {fileName}")
                 self.display_result_pixmap(QPixmap())
-                self.latexEdit.setText('错误：无法加载图片')
+                self.latexEdit.setText("错误：无法加载图片")
                 self.imageLabel.setText("错误：无法加载图片")
-
 
     def start_screenshot_process(self):
         """
@@ -300,7 +338,6 @@ class MainWindow(QMainWindow):
         self.logger.info("开始截图流程...")
         self.hide()
         QTimer.singleShot(200, self.create_and_show_overlay)
-
 
     def create_and_show_overlay(self):
         """
@@ -342,7 +379,9 @@ class MainWindow(QMainWindow):
         """
         处理从ScreenshotOverlay返回的截图结果
         """
-        self.logger.info(f"接收到截图结果. 图片有效: {not pixmap.isNull()}, 大小: {pixmap.size()}")
+        self.logger.info(
+            f"接收到截图结果. 图片有效: {not pixmap.isNull()}, 大小: {pixmap.size()}"
+        )
         QTimer.singleShot(100, self.show_and_activate_main_window)
         QTimer.singleShot(150, lambda: self.display_result_pixmap(pixmap))
 
@@ -362,11 +401,13 @@ class MainWindow(QMainWindow):
     def display_result_pixmap(self, pixmap):
         """
         显示接收到的截图或上传的图片结果，并进行缩放
-        
+
         参数:
             pixmap (QPixmap): 要显示的图像
         """
-        self.logger.debug(f"display_result_pixmap调用. 图片有效: {not pixmap.isNull()}, 大小: {pixmap.size()}")
+        self.logger.debug(
+            f"display_result_pixmap调用. 图片有效: {not pixmap.isNull()}, 大小: {pixmap.size()}"
+        )
 
         if pixmap and not pixmap.isNull():
             self.logger.info(f"显示图片，原始大小: {pixmap.size()}")
@@ -388,7 +429,7 @@ class MainWindow(QMainWindow):
             self.original_pixmap = None
             self.imageLabel.setPixmap(QPixmap())
             self.imageLabel.setText("请上传图片或截图")
-            self.latexEdit.setPlaceholderText('识别出的 LaTeX 公式将显示在这里')
+            self.latexEdit.setPlaceholderText("识别出的 LaTeX 公式将显示在这里")
 
     def _scale_and_display_image(self):
         """
@@ -403,14 +444,13 @@ class MainWindow(QMainWindow):
         max_height = lbl_rect.height()
 
         if max_width <= 0 or max_height <= 0:
-            self.logger.warning(f"_scale_and_display_image: 标签尺寸无效: {max_width}x{max_height}")
+            self.logger.warning(
+                f"_scale_and_display_image: 标签尺寸无效: {max_width}x{max_height}"
+            )
             return
 
         scaled_pixmap = self.original_pixmap.scaled(
-            max_width,
-            max_height,
-            Qt.KeepAspectRatio,
-            Qt.SmoothTransformation
+            max_width, max_height, Qt.KeepAspectRatio, Qt.SmoothTransformation
         )
 
         canvas = QPixmap(lbl_rect.size())
@@ -425,21 +465,19 @@ class MainWindow(QMainWindow):
         self.imageLabel.setPixmap(canvas)
         self.imageLabel.setText("")
 
-
     def resizeEvent(self, event):
         """
         窗口大小改变事件，重新缩放图片以适应新的 QLabel 大小。
         """
         super().resizeEvent(event)
         if self.original_pixmap and not self.original_pixmap.isNull():
-             QTimer.singleShot(0, self._scale_and_display_image)
-
+            QTimer.singleShot(0, self._scale_and_display_image)
 
     def load_config(self):
         """加载配置文件"""
-        config_path = os.path.join(os.path.dirname(__file__), 'config.json')
+        config_path = os.path.join(os.path.dirname(__file__), "config.json")
         try:
-            with open(config_path, 'r', encoding='utf-8') as f:
+            with open(config_path, "r", encoding="utf-8") as f:
                 config = json.load(f)
                 self.logger.info("配置文件加载成功")
                 return config
@@ -449,7 +487,6 @@ class MainWindow(QMainWindow):
         except json.JSONDecodeError as e:
             self.logger.error(f"配置文件解析错误: {e}")
             return {}
-
 
     def setup_shortcuts(self):
         """设置快捷键"""
@@ -513,7 +550,7 @@ class MainWindow(QMainWindow):
             self.overlay = None
 
         super().closeEvent(event)
-    
+
     def copy_latex_result(self):
         """将识别出的LaTeX结果复制到剪贴板"""
         latex_text = self.latexEdit.toPlainText()
@@ -535,7 +572,9 @@ class MainWindow(QMainWindow):
     def copy_mathml_result(self):
         """将识别出的LaTeX结果转换为MathML并复制到剪贴板"""
         latex_text = self.latexEdit.toPlainText().strip()
-        is_placeholder_or_empty = (not latex_text) or (latex_text == self.latexEdit.placeholderText().strip())
+        is_placeholder_or_empty = (not latex_text) or (
+            latex_text == self.latexEdit.placeholderText().strip()
+        )
         is_error_message = latex_text.startswith("识别失败:")
 
         if not is_placeholder_or_empty and not is_error_message:
@@ -545,9 +584,16 @@ class MainWindow(QMainWindow):
                 clipboard = QApplication.clipboard()
                 clipboard.setText(mathml_text)
                 self.logger.info("MathML结果已复制到剪贴板")
-                tooltip = StateToolTip("复制成功", "MathML 代码已复制到剪贴板，可粘贴到Word", self)
+                tooltip = StateToolTip(
+                    "复制成功", "MathML 代码已复制到剪贴板，可粘贴到Word", self
+                )
                 tooltip.setState(True)
-                button_center_global = self.copyWordButton.mapToGlobal(QPoint(self.copyWordButton.width() // 2, self.copyWordButton.height() // 2))
+                button_center_global = self.copyWordButton.mapToGlobal(
+                    QPoint(
+                        self.copyWordButton.width() // 2,
+                        self.copyWordButton.height() // 2,
+                    )
+                )
                 tooltip.show()
                 tooltip.move(self.width() - tooltip.width() - 20, 20)
             except Exception as e:
@@ -555,24 +601,34 @@ class MainWindow(QMainWindow):
                 self.logger.error(error_msg)
                 tooltip = StateToolTip("复制失败", error_msg, self)
                 tooltip.setState(False)
-                button_center_global = self.copyWordButton.mapToGlobal(QPoint(self.copyWordButton.width() // 2, self.copyWordButton.height() // 2))
+                button_center_global = self.copyWordButton.mapToGlobal(
+                    QPoint(
+                        self.copyWordButton.width() // 2,
+                        self.copyWordButton.height() // 2,
+                    )
+                )
                 tooltip.show()
                 tooltip.move(self.width() - tooltip.width() - 20, 20)
         else:
             self.logger.warning("没有有效的LaTeX结果可转换")
             tooltip = StateToolTip("无结果", "没有可复制的LaTeX代码", self)
             tooltip.setState(False)
-            button_center_global = self.copyWordButton.mapToGlobal(QPoint(self.copyWordButton.width() // 2, self.copyWordButton.height() // 2))
+            button_center_global = self.copyWordButton.mapToGlobal(
+                QPoint(
+                    self.copyWordButton.width() // 2, self.copyWordButton.height() // 2
+                )
+            )
             tooltip.show()
             tooltip.move(self.width() - tooltip.width() - 20, 20)
-
 
     def update_copy_button_state(self):
         """根据latexEdit的内容启用/禁用复制按钮"""
         # 获取当前文本，忽略前后空白
         text = self.latexEdit.toPlainText().strip()
         # 如果文本非空，且不等于占位符文本，则启用按钮
-        is_placeholder_or_empty = (not text) or (text == self.latexEdit.placeholderText().strip())
+        is_placeholder_or_empty = (not text) or (
+            text == self.latexEdit.placeholderText().strip()
+        )
         is_error_message = text.startswith("识别失败:")
         # 只有当文本非空、非占位符且不是错误信息时才启用复制按钮
         should_enable = not is_placeholder_or_empty and not is_error_message
@@ -581,15 +637,42 @@ class MainWindow(QMainWindow):
         self.copyWordButton.setEnabled(should_enable)
 
 
+class App(QApplication):
+    def __init__(self, argv: List[str]) -> None:
+        super().__init__(argv)
 
-if __name__ == '__main__':
-    # 启用高 DPI 支持 (如果开启，可能会影响多屏截图时的准确性)
-    # QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
-    # QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
-    # QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough) # Optional policy
+        self.init_cwd()
+        self.init_font()
+        self.init_window()
 
-    app = QApplication(sys.argv)
-    main_window = MainWindow()
-    main_window.show()
-    
+    def init_cwd(self):
+        if getattr(sys, "frozen", False):
+            # Running in a PyInstaller bundle
+            os.chdir(sys._MEIPASS)
+
+    def init_font(self):
+        self.font_database = QFontDatabase()
+
+        def _load_font(font_db: QFontDatabase, font_path: str, *args) -> QFont:
+            font_id = font_db.addApplicationFont(font_path)
+            if font_id == -1:
+                raise RuntimeError(f"Failed to load font: {font_path}")
+            return QFont(font_db.applicationFontFamilies(font_id)[0], *args)
+
+        self._fontIdCrimsonPro = _load_font(self.font_database, ":/CrimsonPro.ttf")
+        self._fontIdNotoSerifSC = _load_font(self.font_database, ":/NotoSerifSC.ttf")
+        self.setStyleSheet(
+            '* { font-family: "Crimson Pro", "Noto Serif CJK SC"; color: black; }'
+        )
+
+    def init_window(self):
+        self._main_window = MainWindow()
+
+    def run(self):
+        self._main_window.show()
+
+
+if __name__ == "__main__":
+    app = App(sys.argv)
+    app.run()
     sys.exit(app.exec_())
