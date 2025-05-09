@@ -28,9 +28,8 @@ from PyQt5.QtWidgets import (
     QHBoxLayout,
     QSizePolicy,
 )
-
-
 from PyQt5.QtWidgets import QShortcut
+from PyQt5.QtWebEngineWidgets import QWebEngineView
 from tools.screenshot import ScreenshotOverlay
 from tools.clipboard_handler import ClipboardHandler
 from tools.local_processor import LocalProcessor
@@ -45,7 +44,70 @@ from qfluentwidgets import (
 )
 
 # 软件版本号常量
-SOFTWARE_VERSION = "v0.1.0"
+SOFTWARE_VERSION = "v0.1.1"
+
+
+def render_latex_to_html(latex_code):
+    """
+    将 LaTeX 公式转换为 HTML 内容，使用 MathJax 进行渲染
+
+    Args:
+        latex_code: LaTeX 公式代码
+
+    Returns:
+        包含 MathJax 渲染的 HTML 字符串
+    """
+    try:
+        # 创建包含 MathJax 的 HTML
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({{
+                    tex2jax: {{inlineMath: [['$','$'], ['\\\\(','\\\\)']], processEscapes: true}},
+                    "HTML-CSS": {{ 
+                        scale: 100,
+                        availableFonts: ["TeX"],
+                        preferredFont: "TeX"
+                    }}
+                }});
+            </script>
+            <script type="text/javascript" src="libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+            <style>
+                body {{
+                    margin: 0;
+                    padding: 0;
+                    background-color: white;
+                    overflow: hidden;
+                }}
+                .math-container {{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    font-size: 18px;
+                }}
+            </style>
+        </head>
+        <body>
+            <div class="math-container">
+                $$
+                {latex_code}
+                $$
+            </div>
+        </body>
+        </html>
+        """
+        return html
+    except Exception as e:
+        logging.error(f"LaTeX 转换错误: {str(e)}")
+        return f"<html><body>转换错误: {str(e)}</body></html>"
+
 
 
 def resource_path(filename: str) -> str:
@@ -133,6 +195,9 @@ class MainWindow(QMainWindow):
         self.setStyleSheet("background-color: #f0f0f0")
         # 加载配置文件
         self.config = self.load_config()
+
+        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.base_url = QUrl.fromLocalFile(self.script_dir + os.path.sep)
 
         # 创建中央部件
         self.centralWidget = QWidget()
@@ -232,6 +297,25 @@ class MainWindow(QMainWindow):
         self.latexCard = SimpleCardWidget(self.centralWidget)
         self.latexCard.setBorderRadius(8)
 
+        # 添加 LaTeX 渲染窗口
+        self.renderCard = SimpleCardWidget(self.latexCard)
+        self.renderCard.setBorderRadius(4)
+        self.renderCard.setStyleSheet("background-color: white;")
+        self.renderCard.setMinimumHeight(80)
+
+        # 渲染标签
+        self.renderView = QWebEngineView(self.renderCard)
+        self.renderView.setMinimumHeight(150)
+        self.renderView.setHtml(
+            "<html><body><center>识别结果将显示在这里</center></body></html>",
+            baseUrl=self.base_url,
+        )
+        self.renderView.setStyleSheet("border: none;")
+
+        renderLayout = QVBoxLayout(self.renderCard)
+        renderLayout.setContentsMargins(10, 10, 10, 10)
+        renderLayout.addWidget(self.renderView)
+
         self.latexEdit = TextEdit(self.latexCard)
         self.latexEdit.setPlaceholderText("识别出的 LaTeX 公式将显示在这里")
         self.latexEdit.setReadOnly(True)
@@ -239,8 +323,10 @@ class MainWindow(QMainWindow):
         self.latexEdit.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
 
         latexLayout = QVBoxLayout(self.latexCard)
+        latexLayout.addWidget(self.renderCard)
         latexLayout.addWidget(self.latexEdit)
         latexLayout.setContentsMargins(10, 10, 10, 10)
+        latexLayout.setSpacing(10)
 
         # 底部按钮布局
         buttonLayout = QHBoxLayout()
@@ -531,9 +617,35 @@ class MainWindow(QMainWindow):
             self.imageLabel.setText("剪切板中的图片无效")
 
     def on_recognition_finished(self, result):
-        """识别完成回调"""
-        self.logger.info(f"接收到识别结果:\n{result[:100]}...")
+        """识别完成后的回调函数"""
+        self.logger.info(f"接收到识别结果: {result}")
+
+        # 更新 LaTeX 文本框
         self.latexEdit.setText(result)
+
+        # 更新渲染窗口
+        try:
+            # 使用 QWebEngineView 渲染公式
+            html_content = render_latex_to_html(result)
+            self.renderView.setHtml(html_content, baseUrl=self.base_url)
+        except Exception as e:
+            self.logger.error(f"渲染 LaTeX 公式时出错: {e}")
+            self.renderView.setHtml(
+                "<html><body><center>无法渲染当前公式</center></body></html>"
+            )
+
+        # 启用复制按钮
+        self.copyButton.setEnabled(True)
+        self.copyWordButton.setEnabled(True)
+
+        # 显示提示
+        tooltip = StateToolTip("识别完成", "公式已成功识别并转换为LaTeX格式", self)
+        tooltip.setState(True)
+        tooltip.move(self.width() - tooltip.width() - 10, 10)
+        tooltip.show()
+
+        # 更新复制按钮状态
+        self.update_copy_button_state()
 
     def closeEvent(self, event):
         """窗口关闭时清理线程"""
