@@ -2,9 +2,22 @@ import sys
 import os
 import json
 import logging
+from typing import List
 from latex2mathml.converter import convert
-from PyQt5.QtCore import Qt, QTimer, QThread, pyqtSignal, QPoint, QUrl
-from PyQt5.QtGui import QPixmap, QIcon, QPainter, QKeySequence, QImage
+
+import resources  # noqa: F401
+
+
+from PyQt5.QtCore import Qt, QTimer, QThread, pyqtSignal, QPoint
+from PyQt5.QtGui import (
+    QPixmap,
+    QIcon,
+    QPainter,
+    QKeySequence,
+    QImage,
+    QFontDatabase,
+    QFont,
+)
 from PyQt5.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -96,11 +109,22 @@ def render_latex_to_html(latex_code):
         return f"<html><body>转换错误: {str(e)}</body></html>"
 
 
+
+def resource_path(filename: str) -> str:
+    if getattr(sys, "frozen", False):
+        # Running in a PyInstaller bundle
+        return os.path.join(sys._MEIPASS, filename)
+    else:
+        # Running in normal Python environment
+        return os.path.join(os.path.abspath("."), filename)
+
+
 class ModelStatusWidget(QWidget):
     """模型状态指示器组件"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
+
         self.setFixedHeight(30)
 
         # 创建水平布局
@@ -155,20 +179,20 @@ class MainWindow(QMainWindow):
         """
         super().__init__()
 
-        os.makedirs("logs", exist_ok=True)
+        # os.makedirs("logs", exist_ok=True)
         # 初始化日志
         logging.basicConfig(
             level=logging.INFO,
             format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
             handlers=[
-                logging.FileHandler("logs/FreeTex.log", encoding="utf-8"),
+                # logging.FileHandler("logs/FreeTex.log", encoding="utf-8"),
                 logging.StreamHandler(),
             ],
         )
         self.logger = logging.getLogger("FreeTex")
 
         # 设置窗口背景颜色
-        self.setStyleSheet("background-color: #f0f4f9;")
+        self.setStyleSheet("background-color: #f0f0f0")
         # 加载配置文件
         self.config = self.load_config()
 
@@ -191,7 +215,7 @@ class MainWindow(QMainWindow):
         # 初始化本地处理器和线程
         self.processor_thread = QThread()
         # 创建LocalProcessor实例，此时不会加载模型
-        self.local_processor = LocalProcessor("demo.yaml")
+        self.local_processor = LocalProcessor(resource_path("demo.yaml"))
         # 将处理器移动到新线程
         self.local_processor.moveToThread(self.processor_thread)
 
@@ -246,6 +270,7 @@ class MainWindow(QMainWindow):
         # 添加版本号标签
         versionLabel = QLabel(SOFTWARE_VERSION, statusBarWidget)
         versionLabel.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        versionLabel.setStyleSheet("color: black;")
 
         # 将组件添加到状态栏布局
         statusBarLayout.addWidget(self.modelStatus)
@@ -675,6 +700,12 @@ class MainWindow(QMainWindow):
                     "复制成功", "MathML 代码已复制到剪贴板，可粘贴到Word", self
                 )
                 tooltip.setState(True)
+                button_center_global = self.copyWordButton.mapToGlobal(
+                    QPoint(
+                        self.copyWordButton.width() // 2,
+                        self.copyWordButton.height() // 2,
+                    )
+                )
                 tooltip.show()
                 tooltip.move(self.width() - tooltip.width() - 20, 20)
             except Exception as e:
@@ -682,13 +713,19 @@ class MainWindow(QMainWindow):
                 self.logger.error(error_msg)
                 tooltip = StateToolTip("复制失败", error_msg, self)
                 tooltip.setState(False)
+                button_center_global = self.copyWordButton.mapToGlobal(
+                    QPoint(
+                        self.copyWordButton.width() // 2,
+                        self.copyWordButton.height() // 2,
+                    )
+                )
                 tooltip.show()
                 tooltip.move(self.width() - tooltip.width() - 20, 20)
         else:
             self.logger.warning("没有有效的LaTeX结果可转换")
             tooltip = StateToolTip("无结果", "没有可复制的LaTeX代码", self)
             tooltip.setState(False)
-            self.copyWordButton.mapToGlobal(
+            button_center_global = self.copyWordButton.mapToGlobal(
                 QPoint(
                     self.copyWordButton.width() // 2, self.copyWordButton.height() // 2
                 )
@@ -712,13 +749,42 @@ class MainWindow(QMainWindow):
         self.copyWordButton.setEnabled(should_enable)
 
 
-if __name__ == "__main__":
-    # 启用高 DPI 支持 (如果开启，可能会影响多屏截图时的准确性)
-    # QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
-    # QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
-    # QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough) # Optional policy
-    app = QApplication(sys.argv)
-    main_window = MainWindow()
-    main_window.show()
+class App(QApplication):
+    def __init__(self, argv: List[str]) -> None:
+        super().__init__(argv)
 
+        self.init_cwd()
+        self.init_font()
+        self.init_window()
+
+    def init_cwd(self):
+        if getattr(sys, "frozen", False):
+            # Running in a PyInstaller bundle
+            os.chdir(sys._MEIPASS)
+
+    def init_font(self):
+        self.font_database = QFontDatabase()
+
+        def _load_font(font_db: QFontDatabase, font_path: str, *args) -> QFont:
+            font_id = font_db.addApplicationFont(font_path)
+            if font_id == -1:
+                raise RuntimeError(f"Failed to load font: {font_path}")
+            return QFont(font_db.applicationFontFamilies(font_id)[0], *args)
+
+        self._fontIdCrimsonPro = _load_font(self.font_database, ":/CrimsonPro.ttf")
+        self._fontIdNotoSerifSC = _load_font(self.font_database, ":/NotoSerifSC.ttf")
+        self.setStyleSheet(
+            '* { font-family: "Crimson Pro", "Noto Serif CJK SC"; color: black; }'
+        )
+
+    def init_window(self):
+        self._main_window = MainWindow()
+
+    def run(self):
+        self._main_window.show()
+
+
+if __name__ == "__main__":
+    app = App(sys.argv)
+    app.run()
     sys.exit(app.exec_())

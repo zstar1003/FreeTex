@@ -1,0 +1,2155 @@
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "ExtraLight"(s) "Regular"(s)
+	stylelang: "en"(s) "en"(s)
+	fullname: "Noto Serif SC ExtraLight"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 40(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC-ExtraLight"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "Light"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC Light"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 50(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 131072(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_300wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "Regular"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC Regular"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 80(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 196608(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_400wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "Medium"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC Medium"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 100(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 262144(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_500wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "SemiBold"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC SemiBold"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 180(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 327680(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_600wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "Bold"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC Bold"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 200(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 393216(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_700wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "ExtraBold"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC ExtraBold"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 205(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 458752(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_800wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 28 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	style: "Black"(s)
+	stylelang: "en"(s)
+	fullname: "Noto Serif SC Black"(s)
+	fullnamelang: "en"(s)
+	slant: 0(i)(s)
+	weight: 210(f)(s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 524288(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	postscriptname: "NotoSerifSC_900wght"(s)
+	color: False(s)
+	symbol: False(s)
+	variable: False(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: True(s)
+	fontwrapper: "SFNT"(s)
+
+Pattern has 23 elts (size 32)
+	family: "Noto Serif SC"(s) "Noto Serif SC ExtraLight"(s)
+	familylang: "en"(s) "en"(s)
+	slant: 0(i)(s)
+	weight: [40 210](s)
+	width: 100(f)(s)
+	foundry: "GOOG"(s)
+	file: "NotoSerifSC-VariableFont_wght.ttf"(s)
+	index: 0(i)(s)
+	outline: True(s)
+	scalable: True(s)
+	charset: 
+	0000: 00000000 ffffffff ffffffff 7fffffff 00000000 ffffffff ffffffff ffffffff
+	0001: 0c0f000f 00000f00 000cf198 00003f00 00040000 00018003 1fffe000 03000000
+	0002: 00000000 00000000 00020000 00000002 00000000 08000000 02000e80 00000c00
+	0003: 00001093 00000000 00000000 00000000 fffe0000 fffe03fb 000003ff 00000000
+	0004: ffff0002 ffffffff 0002ffff 00000000 00000000 00000000 00000000 00000000
+	001e: 00000000 c0000000 00000000 00000000 00000000 ffffffff ffffffff 03ffffff
+	0020: 777f000c 1e2d00e7 00020384 00100000 00000000 00001a00 60000000 00000000
+	0021: 00488629 082048c6 00000000 0fff0fff 03ff0000 03000000 00151870 002003c0
+	0022: e42e8fed 20f07fe9 00001128 00ccccf7 03e00cfc 80000021 0c000000 00008000
+	0023: 010400e0 00000600 00000000 00000000 00000000 c0030000 0c005fff 00000000
+	0024: 00000000 00000008 00000000 ffffffff ffffffff ffffffff ffffffff ffffffff
+	0025: ffffffff ffffffff ffffffff ffffffff ffffffff 30ce0fff 000fdec3 0000807c
+	0026: f0c0c26f 00008000 00000007 3ffcffff 00000000 60000001 00000000 00000000
+	0027: 04080004 a0000000 00400001 ffc00000 000fffff 00000002 00000000 00000000
+	0029: 00000000 00300000 00000000 00000000 00000000 80000000 00000000 0c000000
+	002b: 040000e0 00000000 00000000 00000000 00200000 00000000 00000000 00000000
+	002e: 00000000 0c000000 00000000 00000000 fbffffff ffffffff ffffffff 000fffff
+	002f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 003fffff 0fff0000
+	0030: ffffffff ffffffff fffffffe ffffffff fe7fffff ffffffff ffffffff ffffffff
+	0031: ffffffe0 fffeffff ffffffff ffffffef ffff7fff 0fffffff ffffffff ffff000f
+	0032: 7fffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0033: ffffffff ffffefff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0034: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0035: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0036: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0037: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0038: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0039: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	003f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0040: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0041: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0042: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0043: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0044: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0045: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0046: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0047: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0048: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0049: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff 00000000 00000000
+	004e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	004f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0050: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0051: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0052: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0053: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0054: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0055: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0056: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0057: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0058: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0059: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	005f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0060: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0061: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0062: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0063: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0064: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0065: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0066: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0067: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0068: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0069: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	006f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0070: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0071: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0072: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0073: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0074: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0075: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0076: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0077: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0078: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0079: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	007f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0080: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0081: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0082: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0083: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0084: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0085: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0086: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0087: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0088: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0089: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	008f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0090: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0091: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0092: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0093: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0094: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0095: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0096: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0097: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0098: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	0099: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009a: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009b: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009c: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009d: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009e: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	009f: ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff
+	00f9: e7e01c6e 06beb000 400c4588 ce5c41fc d92a5c31 6da04020 f7010061 ac32029f
+	00fa: 811af5e4 05b8839b 70000a80 00000000 00000000 00000000 00000000 00000000
+	00fb: 0000001f 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00fe: 03ff0000 ffff0000 fff7ffff 00000f7f 00000000 00000000 00000000 00000000
+	00ff: fffffffe ffffffff ffffffff ffffffff ffffffff 7ffffffe 1cfcfcfc 00007f7f
+	01f1: ffff1fff ffffffff ffffffff ffff1fff ffffffff 00001fff 00000000 00000000
+	01f2: ffff0007 0fffffff 000301ff 00000000 00000000 00000000 00000000 00000000
+	0200: 00000000 00000000 00000000 00000000 00000280 00000000 00001000 00000000
+	0201: 00000000 00000000 00000000 00000010 00000000 00000000 00000000 00000000
+	0206: 00000000 00000100 00000000 00400000 00000000 00000000 00000000 00000000
+	020c: 00000000 00000000 00000000 00000000 00000000 00000000 00010000 00000000
+	0213: 00000000 00000000 00000000 00000000 04000000 00000000 00000000 00000000
+	0214: 00080000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0215: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0229: 00000000 00000000 00000000 00000000 00008000 00000000 00000000 00000000
+	0235: 00000000 00000000 00000000 00000000 00000000 00000000 00000800 00000000
+	023c: 00000000 00000000 00000000 00000000 01800000 00000000 00000000 00000000
+	023e: 00000000 00000008 00000000 00000000 00000000 00000000 00000000 00000000
+	0241: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 40000000
+	0242: 00004000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0248: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000200
+	0249: 00000000 00000000 00000000 00000000 00000000 00000000 08000000 00000000
+	024a: 00000002 00000000 00000000 20000000 00000000 00000000 00000200 00000000
+	0255: 00000000 00040000 00000000 00000004 00000000 00000100 00000000 00000000
+	025e: 00000000 00000000 00000000 00000000 00000000 00000000 00800000 00000000
+	0262: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0264: 00000000 00000000 00000000 00000000 00002000 00000000 00000000 00000000
+	0266: 00000000 00000000 00000000 00400000 00000000 00000000 00000000 00000000
+	0267: 00000000 00000000 00000000 10000000 00000000 00000000 00000000 00000000
+	0269: 00000000 00000000 00020000 00000000 00000000 00000000 00000000 00000000
+	026b: 00000000 00000000 10000000 00000000 00000000 00000000 00000000 00000000
+	026c: 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000
+	0278: 00000000 00000000 00000000 00000000 00000000 00040000 00000000 00000000
+	027e: 00000000 00000000 00000000 00000000 00000000 00008000 00000000 00000000
+	027f: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02000000
+	0284: 00000100 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	0286: 00000000 00000000 00000000 01000000 00200000 00000000 00000000 00000000
+	0287: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001
+	028b: 00000000 00000000 00000200 00000000 00000000 00000000 00000000 00000000
+	028c: 00000000 00000000 00128080 00000000 00000000 00000000 00000000 00000000
+	028e: 00008000 00000000 00000000 00000000 02000000 00000000 00000000 00000000
+	0296: 00000000 00000000 00000000 80000000 00000000 00000000 00000000 00000000
+	0298: 00010000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	029f: 00000000 00000000 00000000 40000000 00001008 00000000 00000000 00000000
+	02a7: 00000000 00000000 00000000 00000000 00000000 00000000 20000000 00000000
+	02a8: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 08000000
+	02a9: 00800000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02aa: 00000000 00410000 01000000 00000000 00000000 00000000 00000000 00000000
+	02af: 00000000 00000000 00000000 00000000 00000000 00000004 00000000 00000000
+	02b1: 00000000 01800180 00000000 00000000 00000000 00000000 00000000 00002000
+	02b3: 00000001 00000000 00000000 20048008 00000000 00000000 00000000 00000000
+	02b4: 00090010 00000000 00000000 00000002 00000000 00000000 00000000 02408080
+	02b5: 00006000 00400000 00000000 00000000 00000000 0008c000 00000000 00100080
+	02b6: 30000000 000015c0 00000000 00000000 00600000 00002000 00000000 00002000
+	02b7: 00000000 00000000 00000000 00000000 00000000 00000200 00000020 12000040
+	02b8: 10000440 00000000 00000000 00000000 00000000 01000000 00000000 00000000
+	02ba: 00000000 00000000 00000000 00000000 00000000 00000000 00000080 00000000
+	02bb: 00000000 00000000 80000000 10000004 00000008 00000000 00000000 00000000
+	02bc: 08000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02bd: 00000000 00000000 00000000 00800000 00000080 00000000 00000000 00800000
+	02be: 00000000 00000200 00000000 00000000 00000000 00000000 00000000 00000000
+	02c0: 00000000 00000600 00000000 00000000 00000000 00000200 00000400 00000000
+	02c1: 00000000 00000000 00000000 00000000 00000000 00000000 02200000 02000000
+	02c2: 00000000 00000000 00000000 10000000 00000100 00000010 00000000 00000000
+	02c3: 00800000 00000000 08000000 00000012 00000000 00000000 00000000 00000000
+	02c4: 00000000 00000000 00000000 00000000 00900100 00000000 00000000 00000000
+	02c5: 00000000 00000000 00000004 00000000 00000000 00000000 00000000 00000000
+	02c6: 01080000 0000ba02 00000c04 00000000 00000000 00000000 00000000 00000000
+	02c7: 00000000 00009000 00000000 00000000 80000000 00000000 00000002 20000000
+	02c8: 00000000 00000000 00000000 00000000 00000000 00000000 42000000 00080002
+	02c9: 20000480 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	02ca: 00004004 00000000 00000000 20000000 00000000 00000200 00000000 00000000
+	02cb: 00000000 8b026200 0c004402 11489210 00000000 80020000 00004001 00000000
+	02cc: 00000000 00000000 80400000 00000000 00000000 00000000 00000000 a0600000
+	02cd: 0000040c 00000000 00000000 00000000 8001a800 00006101 00200000 00000000
+	02ce: 05000000 00000448 00000000 10000000 00080100 00000000 00000000 00000000
+	02d5: 00000000 00000000 00000010 00000000 00000000 00000000 00000000 00000000
+	02f8: 00000000 00000000 00000000 01000000 00000010 00400000 00000000 00000000
+	02f9: 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000
+(s)
+	lang: aa|ay|bg|bi|bin|br|ch|da|de|en|es|eu|fj|fo|fur|fy|gd|gl|gn|gv|haw|ho|ia|ig|id|ie|io|is|it|ja|ki|kum|lb|mg|nb|nds|nl|nn|no|nr|oc|om|os|pt|rm|ru|sel|sm|sma|smj|so|sq|ss|st|sv|sw|tl|to|ts|uz|vo|wa|xh|yap|zh-cn|zh-sg|zh-tw|zu|an|fil|ht|jv|kj|kwm|li|ms|na|ng|pap-an|pap-aw|rn|rw|sc|sg|sn|su|za|agr|ayc|bem|cmn|hak|lij|lzh|mhr|miq|mjw|nan|nhn|niu|tpi|unm|wae|yuw(s)
+	fontversion: 131203(i)(s)
+	capability: "otlayout:DFLT otlayout:cyrl otlayout:grek otlayout:hani otlayout:kana otlayout:latn"(s)
+	fontformat: "TrueType"(s)
+	decorative: False(s)
+	color: False(s)
+	symbol: False(s)
+	variable: True(s)
+	fonthashint: True(s)
+	order: 0(i)(s)
+	namedinstance: False(s)
+	fontwrapper: "SFNT"(s)
+
