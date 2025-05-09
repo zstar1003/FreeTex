@@ -10,7 +10,8 @@ a = Analysis(
         ("./unimernet/configs", "unimernet/configs"),
         ("./models/unimernet_small/*.json", "models/unimernet_small"),
         ("./models/unimernet_small/*.pth", "models/unimernet_small"),
-        (".venv/lib/python3.10/site-packages/transformers/models/gemma2", "transformers/models/gemma2")
+        (".venv/lib/python3.10/site-packages/transformers/models/gemma2", "transformers/models/gemma2"),
+        ("libs/katex", "libs/katex")
     ],
     hiddenimports=[
         "unimernet",

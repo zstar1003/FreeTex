@@ -3,5 +3,6 @@
     <qresource>
         <file alias="NotoSerifSC.ttf">fonts/Noto_Serif_SC/NotoSerifSC-VariableFont_wght_3500_punc.ttf</file>
         <file alias="CrimsonPro.ttf">fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf</file>
+        <file alias="mathview.html">mathview/index.html</file>
     </qresource>
 </RCC>

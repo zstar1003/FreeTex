@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/版本-0.1.0-blue" alt="版本">
+  <img src="https://img.shields.io/badge/版本-0.2.0-blue" alt="版本">
   <a href="LICENSE"><img src="https://img.shields.io/badge/许可证-AGPL3.0-green" alt="许可证"></a>
   <h4>
     <a href="README.md">🇨🇳 中文</a>
@@ -100,6 +100,12 @@ git lfs install
 git clone https://huggingface.co/wanderkid/unimernet_small
 ```
 
+#### 编译字体资源文件
+```bash
+cd resources
+pyrcc5 resources/app.qrc -o resources/app_rc.py -compress 3
+```
+
 #### 运行软件
 
 ```bash
@@ -111,23 +117,155 @@ python main.py
 # 🏗️ 项目结构
 
 ```
-d:/Code/FreeTex/
-├── main.py                     # 主应用程序入口
+FreeTex/
+├── .gitignore
+├── .python-version
+├── LICENSE
 ├── README.md                   # 项目说明文件
-├── requirements.txt            # Python 依赖库列表
-├── images/                     # 存放图片资源
-│   └── ...
-├── logs/                       # 存放日志文件
-│   └── FreeTex.log
+├── README_EN.md
+├── config.json
+├── demo.yaml
+├── docs/                       # 文档目录
+│   ├── images/                 # 文档图片
+│   │   ├── group.jpg
+│   │   ├── icon.ico
+│   │   ├── icon.png
+│   │   ├── logo.png
+│   │   └── qrcode.jpg
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+├── libs/                       # 依赖库
+│   ├── index.html
+│   └── katex/                  # KaTeX库
+│       ├── README.md
+│       ├── contrib/
+│       ├── fonts/
+│       ├── katex.css
+│       ├── katex.js
+│       ├── katex.min.css
+│       ├── katex.min.js
+│       └── katex.mjs
+├── main.py                     # 主应用程序入口
+├── main.spec
 ├── models/                     # 存放模型相关文件
-│   ├── README.md               # 模型说明
-│   └── unimernet_small/        # 模型文件目录 
-│       
+│   └── README.md               # 模型说明
+├── pyproject.toml
 ├── qfluentwidgets/             # PyQt-Fluent-Widgets 库
-└── tools/                      # 工具模块
-    ├── screenshot.py           # 截图工具
-    ├── clipboard_handler.py    # 剪贴板处理器
-    └── local_processor.py      # 本地模型处理器
+│   ├── init .py
+│   ├── _rc/
+│   │   ├── init .py
+│   │   ├── i18n/
+│   │   ├── images/
+│   │   ├── qss/
+│   │   ├── resource.py
+│   │   └── resource.qrc
+│   ├── common/                 # 通用模块
+│   │   ├── init .py
+│   │   ├── animation.py
+│   │   ├── auto_wrap.py
+│   │   ├── color.py
+│   │   ├── config.py
+│   │   ├── exception_handler.py
+│   │   ├── font.py
+│   │   ├── icon.py
+│   │   ├── image_utils.py
+│   │   ├── overload.py
+│   │   ├── router.py
+│   │   ├── screen.py
+│   │   ├── smooth_scroll.py
+│   │   ├── style_sheet.py
+│   │   ├── theme_listener.py
+│   │   └── translator.py
+│   ├── components/             # 组件模块
+│   │   ├── init .py
+│   │   ├── date_time/
+│   │   ├── dialog_box/
+│   │   ├── layout/
+│   │   ├── material/
+│   │   ├── navigation/
+│   │   ├── settings/
+│   │   └── widgets/
+│   ├── multimedia/             # 多媒体模块
+│   │   ├── init .py
+│   │   ├── media_play_bar.py
+│   │   ├── media_player.py
+│   │   └── video_widget.py
+│   └── window/                 # 窗口模块
+│       ├── init .py
+│       ├── fluent_window.py
+│       ├── splash_screen.py
+│       └── stacked_widget.py
+├── requirements.txt            # Python 依赖库列表
+├── resources/                  # 资源文件
+│   ├── .gitignore
+│   ├── init .py
+│   ├── app.qrc
+│   ├── fonts/                  # 字体文件
+│   │   ├── Crimson_Pro/
+│   │   └── Noto_Serif_SC/
+│   ├── images/                 # 应用图片资源
+│   │   ├── icon.icns
+│   │   ├── icon.ico
+│   │   ├── icon.png
+│   │   └── logo.png
+│   └── mathview/               # KaTeX渲染视图
+│       └── index.html
+├── scripts/                    # 构建脚本
+│   └── build-macos.sh
+├── test_imgs/                  # 测试图片
+│   ├── 0000000.png
+│   ├── ...
+│   └── 0000014.png
+├── tools/                      # 工具模块
+│   ├── init .py
+│   ├── clipboard_handler.py    # 剪贴板处理器
+│   ├── local_processor.py      # 本地模型处理器
+│   └── screenshot.py           # 截图工具
+├── unimernet/                  # UniMERNet 模型相关
+│   ├── init .py
+│   ├── common/
+│   │   ├── init .py
+│   │   ├── config.py
+│   │   ├── dist_utils.py
+│   │   ├── gradcam.py
+│   │   ├── logger.py
+│   │   ├── optims.py
+│   │   ├── registry.py
+│   │   └── utils.py
+│   ├── configs/                # 配置文件
+│   │   ├── datasets/
+│   │   ├── default.yaml
+│   │   └── models/
+│   ├── datasets/               # 数据集处理
+│   │   ├── init .py
+│   │   ├── builders/
+│   │   ├── data_utils.py
+│   │   └── datasets/
+│   ├── models/                 # 模型定义
+│   │   ├── init .py
+│   │   ├── base_model.py
+│   │   ├── blip2_models/
+│   │   ├── clip_vit.py
+│   │   ├── eva_vit.py
+│   │   ├── unimernet/
+│   │   └── vit.py
+│   ├── processors/             # 数据预处理器
+│   │   ├── init .py
+│   │   ├── base_processor.py
+│   │   ├── blip_processors.py
+│   │   ├── formula_processor.py
+│   │   ├── formula_processor_helper/
+│   │   └── randaugment.py
+│   ├── runners/                # 训练/评估运行器
+│   │   ├── init .py
+│   │   ├── runner_base.py
+│   │   └── runner_iter.py
+│   ├── tasks/                  # 任务定义
+│   │   ├── init .py
+│   │   ├── base_task.py
+│   │   └── unimernet_train.py
+└── uv.lock
 ```
 
 ## 📄 社群
@@ -144,3 +282,15 @@ d:/Code/FreeTex/
 - [UniMERNet](https://github.com/opendatalab/UniMERNet)
 
 - [PyQt-Fluent-Widgets](https://github.com/zhiyiYo/PyQt-Fluent-Widgets)
+
+- [KaTeX](https://github.com/KaTeX/KaTeX)
+
+感谢此项目贡献者们：
+
+<a href="https://github.com/zstar1003/FreeTex/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=zstar1003/FreeTex" />
+</a>
+
+## Star History
+
+![Star History](https://starchart.cc/zstar1003/FreeTex.svg)
