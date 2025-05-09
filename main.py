@@ -7,8 +7,17 @@ from latex2mathml.converter import convert
 
 import resources  # noqa: F401
 
-
-from PyQt5.QtCore import Qt, QTimer, QThread, pyqtSignal, QPoint
+from PyQt5.QtCore import (
+    Qt,
+    QTimer,
+    QThread,
+    pyqtSignal,
+    QPoint,
+    QUrl,
+    QFile,
+    QIODevice,
+    QTextStream,
+)
 from PyQt5.QtGui import (
     QPixmap,
     QIcon,
@@ -27,8 +36,8 @@ from PyQt5.QtWidgets import (
     QFileDialog,
     QHBoxLayout,
     QSizePolicy,
+    QShortcut,
 )
-from PyQt5.QtWidgets import QShortcut
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from tools.screenshot import ScreenshotOverlay
 from tools.clipboard_handler import ClipboardHandler
@@ -41,73 +50,30 @@ from qfluentwidgets import (
     ImageLabel,
     TextEdit,
     StateToolTip,
+    ComboBox,
 )
 
 # 软件版本号常量
-SOFTWARE_VERSION = "v0.1.1"
+SOFTWARE_VERSION = "v0.2.0"
 
 
 def render_latex_to_html(latex_code):
     """
-    将 LaTeX 公式转换为 HTML 内容，使用 MathJax 进行渲染
+    将 LaTeX 公式转换为 HTML 内容
 
     Args:
         latex_code: LaTeX 公式代码
-
-    Returns:
-        包含 MathJax 渲染的 HTML 字符串
     """
     try:
-        # 创建包含 MathJax 的 HTML
-        html = f"""
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <script type="text/x-mathjax-config">
-                MathJax.Hub.Config({{
-                    tex2jax: {{inlineMath: [['$','$'], ['\\\\(','\\\\)']], processEscapes: true}},
-                    "HTML-CSS": {{ 
-                        scale: 100,
-                        availableFonts: ["TeX"],
-                        preferredFont: "TeX"
-                    }}
-                }});
-            </script>
-            <script type="text/javascript" src="libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
-            <style>
-                body {{
-                    margin: 0;
-                    padding: 0;
-                    background-color: white;
-                    overflow: hidden;
-                }}
-                .math-container {{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    width: 100%;
-                    padding: 10px;
-                    box-sizing: border-box;
-                    font-size: 18px;
-                }}
-            </style>
-        </head>
-        <body>
-            <div class="math-container">
-                $$
-                {latex_code}
-                $$
-            </div>
-        </body>
-        </html>
-        """
-        return html
+        fd = QFile(":/mathview.html")
+        if fd.open(QIODevice.ReadOnly | QFile.Text):
+            html = QTextStream(fd).readAll()
+            return html.replace("{latex_code}", latex_code)
+        else:
+            raise FileNotFoundError("MathView HTML file not found")
     except Exception as e:
         logging.error(f"LaTeX 转换错误: {str(e)}")
         return f"<html><body>转换错误: {str(e)}</body></html>"
-
 
 
 def resource_path(filename: str) -> str:
@@ -150,7 +116,7 @@ class ModelStatusWidget(QWidget):
         self.statusIndicator.setStyleSheet(
             "background-color: #2ecc71; border-radius: 6px;"
         )  # Green color
-        self.statusText.setText(f"模型已加载完成 ({device_info})")
+        self.statusText.setText(f"模型已加载完成")
 
     def setLoading(self):
         """设置模型加载中状态"""
@@ -192,7 +158,7 @@ class MainWindow(QMainWindow):
         self.logger = logging.getLogger("FreeTex")
 
         # 设置窗口背景颜色
-        self.setStyleSheet("background-color: #f0f0f0")
+        self.setStyleSheet("background-color: #f0f4f9")
         # 加载配置文件
         self.config = self.load_config()
 
@@ -246,10 +212,10 @@ class MainWindow(QMainWindow):
         """
         初始化窗口设置
         """
-        self.resize(800, 700)
+        self.resize(1000, 800)
         self.setWindowTitle("FreeTex - 免费的智能公式识别神器")
 
-        icon_path = "images/icon.ico"
+        icon_path = "resources/images/icon.ico"
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))
         else:
@@ -301,7 +267,7 @@ class MainWindow(QMainWindow):
         self.renderCard = SimpleCardWidget(self.latexCard)
         self.renderCard.setBorderRadius(4)
         self.renderCard.setStyleSheet("background-color: white;")
-        self.renderCard.setMinimumHeight(80)
+        self.renderCard.setMinimumHeight(200)
 
         # 渲染标签
         self.renderView = QWebEngineView(self.renderCard)
@@ -354,12 +320,27 @@ class MainWindow(QMainWindow):
         self.copyWordButton.clicked.connect(self.copy_mathml_result)
         self.copyWordButton.setEnabled(False)  # 初始禁用
 
+        # 添加LaTeX导出选项
+        self.exportOptionsLayout = QHBoxLayout()
+        self.exportOptionsLayout.setAlignment(Qt.AlignRight)
+
+        self.exportLabel = QLabel("LaTeX导出格式：")
+        self.exportComboBox = ComboBox(self)
+        self.exportComboBox.addItems(["不加包裹", "$$包裹", "\\begin{equation}包裹"])
+        self.exportComboBox.setCurrentIndex(0)
+        self.exportComboBox.setFixedWidth(200)
+        self.exportComboBox.currentIndexChanged.connect(self.onExportFormatChanged)
+
+        self.exportOptionsLayout.addWidget(self.exportLabel)
+        self.exportOptionsLayout.addWidget(self.exportComboBox)
+
         # 添加按钮到布局
         buttonLayout.addWidget(self.uploadButton)
         buttonLayout.addWidget(self.screenshotButton)
-        buttonLayout.addWidget(self.copyButton)
         buttonLayout.addWidget(self.copyWordButton)
+        buttonLayout.addWidget(self.copyButton)
         buttonLayout.addStretch(1)
+        buttonLayout.addLayout(self.exportOptionsLayout)
 
         # 将所有组件添加到主布局
         self.mainLayout.setContentsMargins(10, 10, 10, 10)
@@ -370,6 +351,15 @@ class MainWindow(QMainWindow):
         self.mainLayout.addLayout(buttonLayout)
 
         self.latexEdit.textChanged.connect(self.update_copy_button_state)
+
+    def onExportFormatChanged(self, index):
+        """
+        当导出格式改变时调用
+
+        Args:
+            index: 选择的格式索引
+        """
+        self.logger.info(f"LaTeX导出格式已更改为: {self.exportComboBox.currentText()}")
 
     def on_model_loading_finished(self, device_info):
         """模型加载完成后的回调函数"""
@@ -647,6 +637,9 @@ class MainWindow(QMainWindow):
         # 更新复制按钮状态
         self.update_copy_button_state()
 
+        # 保存当前的LaTeX代码
+        self.current_latex = result
+
     def closeEvent(self, event):
         """窗口关闭时清理线程"""
         self.logger.info("正在关闭主窗口，停止处理器线程...")
@@ -668,7 +661,17 @@ class MainWindow(QMainWindow):
         latex_text = self.latexEdit.toPlainText()
         if latex_text:
             clipboard = QApplication.clipboard()
-            clipboard.setText(latex_text)
+            export_format = self.exportComboBox.currentIndex()
+            # 根据选择的格式添加包裹
+            if export_format == 1:  # $$包裹
+                formatted_latex = f"${latex_text}$"
+            elif export_format == 2:  # \begin{equation}\end{equation}包裹
+                formatted_latex = (
+                    f"\\begin{{equation}}\n{latex_text}\n\\end{{equation}}"
+                )
+            else:  # 不加包裹
+                formatted_latex = latex_text
+            clipboard.setText(formatted_latex)
             self.logger.info("LaTeX结果已复制到剪贴板")
             tooltip = StateToolTip("复制成功", "LaTeX 代码已复制到剪贴板", self)
             tooltip.setState(True)
@@ -700,12 +703,6 @@ class MainWindow(QMainWindow):
                     "复制成功", "MathML 代码已复制到剪贴板，可粘贴到Word", self
                 )
                 tooltip.setState(True)
-                button_center_global = self.copyWordButton.mapToGlobal(
-                    QPoint(
-                        self.copyWordButton.width() // 2,
-                        self.copyWordButton.height() // 2,
-                    )
-                )
                 tooltip.show()
                 tooltip.move(self.width() - tooltip.width() - 20, 20)
             except Exception as e:
@@ -713,23 +710,12 @@ class MainWindow(QMainWindow):
                 self.logger.error(error_msg)
                 tooltip = StateToolTip("复制失败", error_msg, self)
                 tooltip.setState(False)
-                button_center_global = self.copyWordButton.mapToGlobal(
-                    QPoint(
-                        self.copyWordButton.width() // 2,
-                        self.copyWordButton.height() // 2,
-                    )
-                )
                 tooltip.show()
                 tooltip.move(self.width() - tooltip.width() - 20, 20)
         else:
             self.logger.warning("没有有效的LaTeX结果可转换")
             tooltip = StateToolTip("无结果", "没有可复制的LaTeX代码", self)
             tooltip.setState(False)
-            button_center_global = self.copyWordButton.mapToGlobal(
-                QPoint(
-                    self.copyWordButton.width() // 2, self.copyWordButton.height() // 2
-                )
-            )
             tooltip.show()
             tooltip.move(self.width() - tooltip.width() - 20, 20)
 
