@@ -21,9 +21,6 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 - 无需联网免排队  
   采用本地部署的模型，无需联网调用，数据隐私得到充分保障
 
-- 自适应显卡加速    
-  自动调用独立显卡进行推理，秒出识别结果
-
 - 多类型图像识别
   支持手写、印刷、扫描等多种类型的图像识别
 
@@ -44,29 +41,24 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 
 ### 1. 快速使用
 
-1. windows系统：下载软件安装包：
+1. 下载软件
 
-- [百度网盘下载地址](https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888) (提取码: 8888) 
+windows系统(无需安装，开箱即用)：
 
-- [夸克网盘下载地址](https://pan.quark.cn/s/84822bce7b53)
+- [百度网盘下载地址](https://pan.baidu.com/s/12rtlWi6S8PxHL2NQew5_rg?pwd=8888)(提取码: 8888)
 
-- [阿里网盘下载地址](https://www.alipan.com/s/mYys8oFDdhb)
+- [夸克网盘下载地址](https://pan.quark.cn/s/65a205d8abb8)
 
-CPU绿色特供版(体积小，解压即用，无显卡用户可选择)：
+macos系统：
 
-- [百度网盘下载地址](https://pan.baidu.com/s/1OI25nvTbLpTpLpNMNmNa4w?pwd=8888) (提取码: 8888) 
+- [百度网盘下载地址](https://pan.baidu.com/s/1NstYEU4TcWubJSAO8WcLTw?pwd=8888)(提取码: 8888)
+
+- [夸克网盘下载地址](https://pan.quark.cn/s/dac20f982f53)
+
 
 2. 安装软件，开始使用
 
 具体使用方式可参考：https://blog.csdn.net/qq1198768105/article/details/147739708
-
-3. 部分机型可能出现启动闪退的情况，日志报错：
-
-```c
-OSError : [WinError 126]找不到指定的模块。interns/torch/lib/fbgemm.dll
-```
-
-解决方式可参考：https://blog.csdn.net/qq1198768105/article/details/147767314
 
 
 ### 2. 源码运行
@@ -100,7 +92,7 @@ git lfs install
 git clone https://huggingface.co/wanderkid/unimernet_small
 ```
 
-#### 编译字体资源文件
+#### 编译资源文件
 ```bash
 cd resources
 pyrcc5 resources/app.qrc -o resources/app_rc.py -compress 3

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreeTex</title>
     <link rel="icon" href="images/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
     <header>
         <nav>
@@ -15,9 +17,12 @@
                 <img src="images/logo.png" alt="FreeTex Logo" class="animate__animated animate__fadeInDown">
             </div>
             <ul>
-                <li><a href="#features" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">特点</a></li>
-                <li><a href="#usage" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">使用方式</a></li>
-                <li><a href="https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">下载</a></li>
+                <li><a href="#features" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">特点</a>
+                </li>
+                <li><a href="#usage" class="nav-link animate__animated animate__fadeInDown animate__delay-1s">使用方式</a>
+                </li>
+                <li><a href="https://github.com/zstar1003/FreeTex"
+                        class="nav-link animate__animated animate__fadeInDown animate__delay-1s">Github</a></li>
             </ul>
         </nav>
     </header>
@@ -27,10 +32,13 @@
             <h1>FreeTex</h1>
             <p>免费的公式智能识别软件，将图像公式转换为可编辑的 LaTeX</p>
             <div class="badges animate__animated animate__fadeInUp animate__delay-1s">
-                <img src="https://img.shields.io/badge/版本-0.1.0-blue" alt="版本">
+                <img src="https://img.shields.io/badge/版本-0.2.0-blue" alt="版本">
                 <img src="https://img.shields.io/badge/许可证-AGPL3.0-green" alt="许可证">
             </div>
-            <a href="https://pan.baidu.com/s/1wrI1lGRUso1HzO8ucrD9-g?pwd=8888" class="cta-button animate__animated animate__pulse animate__infinite">立即下载(windows_x64)</a>
+            <a href="https://pan.baidu.com/s/12rtlWi6S8PxHL2NQew5_rg?pwd=8888"
+                class="cta-button animate__animated animate__pulse animate__infinite">立即下载(windows_x64)</a>
+            <a href="https://pan.baidu.com/s/1NstYEU4TcWubJSAO8WcLTw?pwd=8888"
+                class="cta-button animate__animated animate__pulse animate__infinite">立即下载(macOS_arm64)</a>
         </div>
     </section>
 
@@ -91,51 +99,51 @@
             </div>
 
             <div id="quick-start" class="tab-content animate__animated" style="display: block;">
-            <h3>1. 快速使用</h3>
-            <p>1. Windows系统：下载软件安装包 (此处可添加链接)</p>
-            <p>2. 打开软件，开始使用</p>
-            <h4>默认快捷键 (可通过config.json文件修改):</h4>
-            <table>
-              <thead>
-                <tr>
-                  <th>功能</th>
-                  <th>快捷键</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>截图</td>
-                  <td><code>Ctrl+Alt+Q</code></td>
-                </tr>
-                <tr>
-                  <td>上传</td>
-                  <td><code>Ctrl+U</code></td>
-                </tr>
-                <tr>
-                  <td>粘贴</td>
-                  <td><code>Ctrl+V</code></td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
+                <h3>1. 快速使用</h3>
+                <p>1. Windows系统：下载软件安装包 (此处可添加链接)</p>
+                <p>2. 打开软件，开始使用</p>
+                <h4>默认快捷键 (可通过config.json文件修改):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>功能</th>
+                            <th>快捷键</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>截图</td>
+                            <td><code>Ctrl+Alt+Q</code></td>
+                        </tr>
+                        <tr>
+                            <td>上传</td>
+                            <td><code>Ctrl+U</code></td>
+                        </tr>
+                        <tr>
+                            <td>粘贴</td>
+                            <td><code>Ctrl+V</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <div id="source-run" class="tab-content animate__animated">
-            <h3>2. 源码运行</h3>
-            <h4>配置环境</h4>
-            <pre><code>conda create -n freetex python=3.10
+            <div id="source-run" class="tab-content animate__animated">
+                <h3>2. 源码运行</h3>
+                <h4>配置环境</h4>
+                <pre><code>conda create -n freetex python=3.10
 conda activate freetex</code></pre>
-            <h4>安装依赖</h4>
-            <pre><code>pip install -r requirements.txt</code></pre>
-            <p>由于unimernet的requirements会自动安装最新CPU版的pytorch，需要卸载并重新安装gpu版本的pytorch(及对应的torchvision):</p>
-            <pre><code>pip install torch==2.4.0 torchvision==0.19.0 --index-url https://download.pytorch.org/whl/cu118</code></pre>
-            <h4>下载模型</h4>
-            <p>下载unimernet_small模型放置在<code>models</code>下:</p>
-            <pre><code>cd models
+                <h4>安装依赖</h4>
+                <pre><code>pip install -r requirements.txt</code></pre>
+                <p>由于unimernet的requirements会自动安装最新CPU版的pytorch，需要卸载并重新安装gpu版本的pytorch(及对应的torchvision):</p>
+                <pre><code>pip install torch==2.4.0 torchvision==0.19.0 --index-url https://download.pytorch.org/whl/cu118</code></pre>
+                <h4>下载模型</h4>
+                <p>下载unimernet_small模型放置在<code>models</code>下:</p>
+                <pre><code>cd models
 git lfs install
 git clone https://huggingface.co/wanderkid/unimernet_small</code></pre>
-            <h4>运行软件</h4>
-            <pre><code>python main.py</code></pre>
-        </div> 
+                <h4>运行软件</h4>
+                <pre><code>python main.py</code></pre>
+            </div>
     </section>
 
     <footer>
@@ -144,4 +152,5 @@ git clone https://huggingface.co/wanderkid/unimernet_small</code></pre>
 
     <script src="script.js"></script>
 </body>
+
 </html>
