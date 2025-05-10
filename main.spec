@@ -31,7 +31,8 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='FreeTeX',  # The name of the executable
+    name='FreeTex',  # The name of the executable
+    icon='resources/images/icon.ico',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -51,7 +52,7 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='FreeTeX',
+    name='FreeTex',
 )
 
 app = BUNDLE(
