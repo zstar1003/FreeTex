@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/logo.png" width="400" alt="FreeTex">
+  <img src="resources/images/logo.png" width="400" alt="FreeTex">
 </div>
 
 <div align="center">
@@ -60,6 +60,9 @@ macos系统：
 
 具体使用方式可参考：https://blog.csdn.net/qq1198768105/article/details/147739708
 
+> [!NOTE]
+> windows版本使用时需放置软件在非中文路径下，否则无法正常启动。
+> 软件只识别公式，不识别文字，公式须保持亮色背景(白色最佳)
 
 ### 2. 源码运行
 
