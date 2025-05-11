@@ -142,9 +142,7 @@ FreeTex/
 
 For questions or suggestions, join our community group:
 
-<div align="center">
-  <img src="docs/images/group.jpg" width="200" alt="Community QR Code">
-</div>
+Due to the group chat exceeding 200 people, it is not possible to join by scanning the code. If you need to add to the group, please add me on WeChat zstar1003 and leave a note saying "add to group".
 
 ## 🚀 Acknowledgements
 
