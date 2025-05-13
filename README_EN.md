@@ -93,7 +93,6 @@ git clone https://huggingface.co/wanderkid/unimernet_small
 #### Compile Resource Files
 
 ```bash
-cd resources
 pyrcc5 resources/app.qrc -o resources/app_rc.py -compress 3
 ```
 
