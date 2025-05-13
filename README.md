@@ -97,7 +97,6 @@ git clone https://huggingface.co/wanderkid/unimernet_small
 
 #### 编译资源文件
 ```bash
-cd resources
 pyrcc5 resources/app.qrc -o resources/app_rc.py -compress 3
 ```
 
