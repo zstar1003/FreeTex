@@ -37,6 +37,8 @@ from PyQt5.QtWidgets import (
     QHBoxLayout,
     QSizePolicy,
     QShortcut,
+    QSystemTrayIcon,
+    QMenu,  
 )
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from tools.screenshot import ScreenshotOverlay
@@ -207,6 +209,9 @@ class MainWindow(QMainWindow):
 
         self.overlay = None  # 用于存储截图覆盖层实例
         self.original_pixmap = None  # 保存原始（未缩放）的截图或上传图片
+
+        # 初始化系统托盘
+        self.init_tray()
 
     def initWindow(self):
         """
@@ -641,20 +646,32 @@ class MainWindow(QMainWindow):
         self.current_latex = result
 
     def closeEvent(self, event):
-        """窗口关闭时清理线程"""
-        self.logger.info("正在关闭主窗口，停止处理器线程...")
-        self.processor_thread.quit()
-        self.processor_thread.wait(5000)
-        if self.processor_thread.isRunning():
-            self.logger.warning("处理器线程未正常终止")
+        """窗口关闭事件处理"""
+        if self.tray_icon.isVisible():
+            event.ignore()  # 忽略关闭事件
+            self.hide()  # 隐藏主窗口
+            self.tray_icon.showMessage(
+                "FreeTex",
+                "程序已最小化到系统托盘，双击图标可以重新打开窗口",
+                QSystemTrayIcon.Information,
+                2000
+            )
         else:
-            self.logger.info("处理器线程已停止")
+            # 如果托盘图标不可见，则正常关闭
+            self.logger.info("正在关闭主窗口，停止处理器线程...")
+            self.processor_thread.quit()
+            self.processor_thread.wait(5000)
+            if self.processor_thread.isRunning():
+                self.logger.warning("处理器线程未正常终止")
+            else:
+                self.logger.info("处理器线程已停止")
 
-        if self.overlay is not None and self.overlay.isVisible():
-            self.overlay.close()
-            self.overlay = None
-
-        super().closeEvent(event)
+            if self.overlay is not None and self.overlay.isVisible():
+                self.overlay.close()
+                self.overlay = None
+                
+            self.tray_icon.hide()  # 确保托盘图标被移除
+            event.accept()
 
     def copy_latex_result(self):
         """将识别出的LaTeX结果复制到剪贴板"""
@@ -734,6 +751,46 @@ class MainWindow(QMainWindow):
         self.copyButton.setEnabled(should_enable)
         self.copyWordButton.setEnabled(should_enable)
 
+    def init_tray(self):
+        """初始化系统托盘"""
+        self.tray_icon = QSystemTrayIcon(self)
+        self.tray_icon.setIcon(self.windowIcon())
+        
+        # 创建托盘菜单
+        tray_menu = QMenu()
+        show_action = tray_menu.addAction("显示主窗口")
+        show_action.triggered.connect(self.show_from_tray)
+        quit_action = tray_menu.addAction("退出")
+        quit_action.triggered.connect(self.quit_app)
+        
+        self.tray_icon.setContextMenu(tray_menu)
+        self.tray_icon.activated.connect(self.tray_icon_activated)
+        self.tray_icon.show()
+        
+        # 显示提示信息
+        self.tray_icon.setToolTip("FreeTex - 智能公式识别神器")
+        self.tray_icon.showMessage(
+            "FreeTex",
+            "程序已最小化到系统托盘，双击图标可以重新打开窗口",
+            QSystemTrayIcon.Information,
+            2000
+        )
+
+    def show_from_tray(self):
+        """从托盘显示窗口"""
+        self.showNormal()
+        self.activateWindow()
+        self.raise_()
+
+    def tray_icon_activated(self, reason):
+        """托盘图标被激活时的处理函数"""
+        if reason == QSystemTrayIcon.DoubleClick:
+            self.show_from_tray()
+
+    def quit_app(self):
+        """完全退出应用程序"""
+        self.tray_icon.hide()
+        QApplication.quit()
 
 class App(QApplication):
     def __init__(self, argv: List[str]) -> None:
