@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/版本-0.2.0-blue" alt="版本">
+  <img src="https://img.shields.io/badge/版本-0.3.0-blue" alt="版本">
   <a href="LICENSE"><img src="https://img.shields.io/badge/许可证-AGPL3.0-green" alt="许可证"></a>
   <h4>
     <a href="README.md">🇨🇳 中文</a>
@@ -45,9 +45,9 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 
 windows系统(无需安装，开箱即用)：
 
-- [百度网盘下载地址](https://pan.baidu.com/s/12rtlWi6S8PxHL2NQew5_rg?pwd=8888)(提取码: 8888)
+- [百度网盘下载地址](https://pan.baidu.com/s/1MupcVrl4epva1UP-bSWovg?pwd=8888)(提取码: 8888)
 
-- [夸克网盘下载地址](https://pan.quark.cn/s/65a205d8abb8)
+- [夸克网盘下载地址](https://pan.quark.cn/s/830c4ec3d61d)
 
 macos系统：
 

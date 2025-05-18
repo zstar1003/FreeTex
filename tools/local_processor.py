@@ -54,7 +54,7 @@ class LocalProcessor(QObject):
             self.model_loaded.emit(f"加载失败 ({str(self.device)}): {str(e)}")
 
     def init_model(self):
-        """初始化模型 - 这个方法现在只负责实际加载逻辑"""
+        """初始化模型"""
         self.logger.debug("执行init_model...")
         import unimernet.tasks as tasks
         from unimernet.common.config import Config

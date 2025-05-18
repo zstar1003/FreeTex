@@ -1,8 +1,8 @@
 """
- Copyright (c) 2022, salesforce.com, inc.
- All rights reserved.
- SPDX-License-Identifier: BSD-3-Clause
- For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+Copyright (c) 2022, salesforce.com, inc.
+All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause
+For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
 import logging
@@ -155,7 +155,7 @@ class Config:
             else:
                 logging.warning(f"No dataset named '{dataset}' in config. Skipping")
 
-        logging.info(f"\n======  Model Attributes  ======")
+        logging.info("\n======  Model Attributes  ======")
         logging.info(self._convert_node_to_json(self.config.model))
 
     def _convert_node_to_json(self, node):
@@ -228,9 +228,9 @@ class ConfigValidator:
         Convert yaml config (dict-like) to list, required by argparse.
         """
         for k, v in config.items():
-            assert (
-                k in self.arguments
-            ), f"""{k} is not a valid argument. Support arguments are {self.format_arguments()}."""
+            assert k in self.arguments, (
+                f"""{k} is not a valid argument. Support arguments are {self.format_arguments()}."""
+            )
 
             if self.arguments[k].type is not None:
                 try:
@@ -239,9 +239,9 @@ class ConfigValidator:
                     raise ValueError(f"{k} is not a valid {self.arguments[k].type}.")
 
             if self.arguments[k].choices is not None:
-                assert (
-                    v in self.arguments[k].choices
-                ), f"""{k} must be one of {self.arguments[k].choices}."""
+                assert v in self.arguments[k].choices, (
+                    f"""{k} must be one of {self.arguments[k].choices}."""
+                )
 
         return config
 

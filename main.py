@@ -12,7 +12,6 @@ from PyQt5.QtCore import (
     QTimer,
     QThread,
     pyqtSignal,
-    QPoint,
     QUrl,
     QFile,
     QIODevice,
@@ -38,7 +37,7 @@ from PyQt5.QtWidgets import (
     QSizePolicy,
     QShortcut,
     QSystemTrayIcon,
-    QMenu,  
+    QMenu,
 )
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from tools.screenshot import ScreenshotOverlay
@@ -56,7 +55,7 @@ from qfluentwidgets import (
 )
 
 # 软件版本号常量
-SOFTWARE_VERSION = "v0.2.0"
+SOFTWARE_VERSION = "v0.3.0"
 
 
 def render_latex_to_html(latex_code):
@@ -118,7 +117,7 @@ class ModelStatusWidget(QWidget):
         self.statusIndicator.setStyleSheet(
             "background-color: #2ecc71; border-radius: 6px;"
         )  # Green color
-        self.statusText.setText(f"模型已加载完成")
+        self.statusText.setText("模型已加载完成")
 
     def setLoading(self):
         """设置模型加载中状态"""
@@ -654,7 +653,7 @@ class MainWindow(QMainWindow):
                 "FreeTex",
                 "程序已最小化到系统托盘，双击图标可以重新打开窗口",
                 QSystemTrayIcon.Information,
-                2000
+                2000,
             )
         else:
             # 如果托盘图标不可见，则正常关闭
@@ -669,7 +668,7 @@ class MainWindow(QMainWindow):
             if self.overlay is not None and self.overlay.isVisible():
                 self.overlay.close()
                 self.overlay = None
-                
+
             self.tray_icon.hide()  # 确保托盘图标被移除
             event.accept()
 
@@ -755,25 +754,25 @@ class MainWindow(QMainWindow):
         """初始化系统托盘"""
         self.tray_icon = QSystemTrayIcon(self)
         self.tray_icon.setIcon(self.windowIcon())
-        
+
         # 创建托盘菜单
         tray_menu = QMenu()
         show_action = tray_menu.addAction("显示主窗口")
         show_action.triggered.connect(self.show_from_tray)
         quit_action = tray_menu.addAction("退出")
         quit_action.triggered.connect(self.quit_app)
-        
+
         self.tray_icon.setContextMenu(tray_menu)
         self.tray_icon.activated.connect(self.tray_icon_activated)
         self.tray_icon.show()
-        
+
         # 显示提示信息
         self.tray_icon.setToolTip("FreeTex - 智能公式识别神器")
         self.tray_icon.showMessage(
             "FreeTex",
             "程序已最小化到系统托盘，双击图标可以重新打开窗口",
             QSystemTrayIcon.Information,
-            2000
+            2000,
         )
 
     def show_from_tray(self):
@@ -791,6 +790,7 @@ class MainWindow(QMainWindow):
         """完全退出应用程序"""
         self.tray_icon.hide()
         QApplication.quit()
+
 
 class App(QApplication):
     def __init__(self, argv: List[str]) -> None:
