@@ -137,11 +137,8 @@ FreeTex/
 └── uv.lock
 ```
 
-## 📄 Community
-
-For questions or suggestions, join our community group:
-
-Due to the group chat exceeding 200 people, it is not possible to join by scanning the code. If you need to add to the group, please add me on WeChat zstar1003 and leave a note saying "add to group".
+## 📮 Notice
+**Call for Bad Cases:** If you have encountered any cases where the model performs poorly, I would greatly appreciate it if you could share them in the issue.
 
 ## 🚀 Acknowledgements
 
