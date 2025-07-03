@@ -1,58 +1,61 @@
-import sys
-import os
 import json
 import logging
+import os
+import sys
 from typing import List
+
 from latex2mathml.converter import convert
-
-import resources  # noqa: F401
-
 from PyQt5.QtCore import (
-    Qt,
-    QTimer,
-    QThread,
-    pyqtSignal,
-    QUrl,
     QFile,
     QIODevice,
+    Qt,
     QTextStream,
+    QThread,
+    QTimer,
+    QUrl,
+    pyqtSignal,
 )
 from PyQt5.QtGui import (
-    QPixmap,
-    QIcon,
-    QPainter,
-    QKeySequence,
-    QImage,
-    QFontDatabase,
     QFont,
-)
-from PyQt5.QtWidgets import (
-    QApplication,
-    QMainWindow,
-    QLabel,
-    QVBoxLayout,
-    QWidget,
-    QFileDialog,
-    QHBoxLayout,
-    QSizePolicy,
-    QShortcut,
-    QSystemTrayIcon,
-    QMenu,
+    QFontDatabase,
+    QIcon,
+    QImage,
+    QKeySequence,
+    QPainter,
+    QPixmap,
 )
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-from tools.screenshot import ScreenshotOverlay
-from tools.clipboard_handler import ClipboardHandler
-from tools.local_processor import LocalProcessor
+from PyQt5.QtWidgets import (
+    QApplication,
+    QFileDialog,
+    QHBoxLayout,
+    QLabel,
+    QMainWindow,
+    QMenu,
+    QShortcut,
+    QSizePolicy,
+    QSystemTrayIcon,
+    QVBoxLayout,
+    QWidget,
+)
 
+import resources  # noqa: F401
+from qfluentwidgets import (
+    ComboBox,
+    ImageLabel,
+    SimpleCardWidget,
+    StateToolTip,
+    TextEdit,
+)
+from qfluentwidgets import (
+    FluentIcon as FIF,
+)
 from qfluentwidgets import (
     PushButton as FluentPushButton,
-    FluentIcon as FIF,
-    SimpleCardWidget,
-    ImageLabel,
-    TextEdit,
-    StateToolTip,
-    ComboBox,
 )
+from tools.clipboard_handler import ClipboardHandler
+from tools.local_processor import LocalProcessor
+from tools.screenshot import ScreenshotOverlay
 
 # 软件版本号常量
 SOFTWARE_VERSION = "v0.3.0"
@@ -80,7 +83,13 @@ def render_latex_to_html(latex_code):
 def resource_path(filename: str) -> str:
     if getattr(sys, "frozen", False):
         # Running in a PyInstaller bundle
-        return os.path.join(sys._MEIPASS, filename)
+        try:
+            # 使用utf-8编码处理路径，避免编码问题
+            base_path = sys._MEIPASS.encode('utf-8').decode('utf-8')
+            return os.path.join(base_path, filename)
+        except (UnicodeDecodeError, UnicodeEncodeError):
+            # 如果编码出错，尝试使用原始路径
+            return os.path.join(sys._MEIPASS, filename)
     else:
         # Running in normal Python environment
         return os.path.join(os.path.abspath("."), filename)
@@ -163,8 +172,17 @@ class MainWindow(QMainWindow):
         # 加载配置文件
         self.config = self.load_config()
 
-        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        # 使用resource_path函数获取正确的脚本目录
+        if getattr(sys, "frozen", False):
+            # 在打包后的应用中，使用sys._MEIPASS作为基础目录
+            self.script_dir = sys._MEIPASS
+        else:
+            # 在开发环境中，使用__file__的目录
+            self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        
         self.base_url = QUrl.fromLocalFile(self.script_dir + os.path.sep)
+        self.logger.info(f"脚本目录: {self.script_dir}")
+        self.logger.info(f"基础URL: {self.base_url.toString()}")
 
         # 创建中央部件
         self.centralWidget = QWidget()
@@ -182,7 +200,10 @@ class MainWindow(QMainWindow):
         # 初始化本地处理器和线程
         self.processor_thread = QThread()
         # 创建LocalProcessor实例，此时不会加载模型
-        self.local_processor = LocalProcessor(resource_path("demo.yaml"))
+        # 使用resource_path函数获取正确的配置文件路径
+        config_path = resource_path("demo.yaml")
+        self.logger.info(f"使用配置文件路径: {config_path}")
+        self.local_processor = LocalProcessor(config_path)
         # 将处理器移动到新线程
         self.local_processor.moveToThread(self.processor_thread)
 
@@ -555,8 +576,9 @@ class MainWindow(QMainWindow):
 
     def load_config(self):
         """加载配置文件"""
-        config_path = os.path.join(os.path.dirname(__file__), "config.json")
         try:
+            # 使用resource_path函数获取正确的配置文件路径
+            config_path = resource_path("config.json")
             with open(config_path, "r", encoding="utf-8") as f:
                 config = json.load(f)
                 self.logger.info("配置文件加载成功")
@@ -566,6 +588,9 @@ class MainWindow(QMainWindow):
             return {}
         except json.JSONDecodeError as e:
             self.logger.error(f"配置文件解析错误: {e}")
+            return {}
+        except Exception as e:
+            self.logger.error(f"配置文件加载异常: {e}")
             return {}
 
     def setup_shortcuts(self):
@@ -803,22 +828,45 @@ class App(QApplication):
     def init_cwd(self):
         if getattr(sys, "frozen", False):
             # Running in a PyInstaller bundle
-            os.chdir(sys._MEIPASS)
+            # 设置环境变量以确保正确的路径处理
+            try:
+                # 确保PYTHONIOENCODING设置为utf-8
+                os.environ.setdefault('PYTHONIOENCODING', 'utf-8')
+                # 记录当前工作目录和资源目录
+                cwd = os.getcwd()
+                resource_dir = sys._MEIPASS
+                self.logger.info(f"当前工作目录: {cwd}")
+                self.logger.info(f"资源目录: {resource_dir}")
+            except Exception as e:
+                self.logger.warning(f"初始化工作目录时出现警告: {e}")
+        else:
+            # Running in normal Python environment
+            pass
 
     def init_font(self):
         self.font_database = QFontDatabase()
 
         def _load_font(font_db: QFontDatabase, font_path: str, *args) -> QFont:
-            font_id = font_db.addApplicationFont(font_path)
-            if font_id == -1:
-                raise RuntimeError(f"Failed to load font: {font_path}")
-            return QFont(font_db.applicationFontFamilies(font_id)[0], *args)
+            try:
+                font_id = font_db.addApplicationFont(font_path)
+                if font_id == -1:
+                    raise RuntimeError(f"Failed to load font: {font_path}")
+                return QFont(font_db.applicationFontFamilies(font_id)[0], *args)
+            except Exception as e:
+                logging.warning(f"字体加载失败: {font_path}, 错误: {e}")
+                # 返回系统默认字体
+                return QFont()
 
-        self._fontIdCrimsonPro = _load_font(self.font_database, ":/CrimsonPro.ttf")
-        self._fontIdNotoSerifSC = _load_font(self.font_database, ":/NotoSerifSC.ttf")
-        self.setStyleSheet(
-            '* { font-family: "Crimson Pro", "Noto Serif CJK SC"; color: black; }'
-        )
+        try:
+            self._fontIdCrimsonPro = _load_font(self.font_database, ":/CrimsonPro.ttf")
+            self._fontIdNotoSerifSC = _load_font(self.font_database, ":/NotoSerifSC.ttf")
+            self.setStyleSheet(
+                '* { font-family: "Crimson Pro", "Noto Serif CJK SC"; color: black; }'
+            )
+        except Exception as e:
+            logging.warning(f"字体初始化失败: {e}")
+            # 使用系统默认字体
+            self.setStyleSheet('* { color: black; }')
 
     def init_window(self):
         self._main_window = MainWindow()

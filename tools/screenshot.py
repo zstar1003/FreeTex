@@ -1,9 +1,9 @@
-import sys
 import logging
 import platform
-from PyQt5.QtWidgets import QWidget, QApplication, QDesktopWidget
-from PyQt5.QtGui import QPixmap, QPainter, QPen, QBrush, QColor, QCursor
-from PyQt5.QtCore import Qt, QRect, QPoint, QSize, pyqtSignal, QTimer
+from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.QtGui import QPixmap, QPainter, QPen, QColor
+from PyQt5.QtCore import Qt, QRect, QPoint, pyqtSignal, QTimer
+
 
 class ScreenshotOverlay(QWidget):
     """
@@ -14,8 +14,9 @@ class ScreenshotOverlay(QWidget):
     3. 提供十字辅助线帮助精确定位
     4. 支持ESC键取消截图
     """
+
     screenshot_taken = pyqtSignal(QPixmap)  # 截图完成信号
-    screenshot_cancelled = pyqtSignal()    # 截图取消信号
+    screenshot_cancelled = pyqtSignal()  # 截图取消信号
 
     def __init__(self):
         super().__init__()
@@ -23,10 +24,10 @@ class ScreenshotOverlay(QWidget):
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Tool)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setCursor(Qt.CrossCursor)
-        self.logger = logging.getLogger('logs/FreeTex.log')
+        self.logger = logging.getLogger("logs/FreeTex.log")
 
         # 检测操作系统和高DPI支持
-        self.is_macos = (platform.system() == 'Darwin')
+        self.is_macos = platform.system() == "Darwin"
         self.device_pixel_ratio = 1.0
 
         # 初始化变量
@@ -45,9 +46,9 @@ class ScreenshotOverlay(QWidget):
 
         # 如果截图失败，立即关闭窗口并通知主窗口
         if self.full_screenshot is None or self.full_screenshot.isNull():
-             self.logger.error("致命错误: 捕获屏幕截图失败")
-             QTimer.singleShot(10, self.close)
-             return
+            self.logger.error("致命错误: 捕获屏幕截图失败")
+            QTimer.singleShot(10, self.close)
+            return
 
         # 设置窗口大小为整个虚拟桌面
         self.setGeometry(self.desktop_rect)
@@ -74,9 +75,9 @@ class ScreenshotOverlay(QWidget):
         """捕获整个虚拟桌面截图"""
         screen = QApplication.primaryScreen()
         if screen is None:
-             self.logger.error("无法获取主屏幕")
-             self.full_screenshot = None
-             return
+            self.logger.error("无法获取主屏幕")
+            self.full_screenshot = None
+            return
 
         try:
             if QApplication.instance() is None:
@@ -91,17 +92,18 @@ class ScreenshotOverlay(QWidget):
                     self.desktop_rect.x(),
                     self.desktop_rect.y(),
                     self.desktop_rect.width(),
-                    self.desktop_rect.height()
+                    self.desktop_rect.height(),
                 )
             if self.full_screenshot.isNull():
-                 self.logger.error("捕获屏幕截图失败: grabWindow返回空pixmap")
+                self.logger.error("捕获屏幕截图失败: grabWindow返回空pixmap")
             else:
-                 self.logger.info(f"成功捕获屏幕截图，大小: {self.full_screenshot.size()}")
+                self.logger.info(
+                    f"成功捕获屏幕截图，大小: {self.full_screenshot.size()}"
+                )
 
         except Exception as e:
             self.logger.error(f"捕获屏幕截图过程中发生异常: {e}")
             self.full_screenshot = None
-
 
     def paintEvent(self, event):
         """绘制事件：绘制背景、遮罩、选区和辅助线"""
@@ -110,31 +112,37 @@ class ScreenshotOverlay(QWidget):
 
         # 绘制半透明遮罩层
         if self.full_screenshot and not self.full_screenshot.isNull():
-             painter.drawPixmap(0, 0, self.full_screenshot)
-             painter.fillRect(self.rect(), self.overlay_color)
+            painter.drawPixmap(0, 0, self.full_screenshot)
+            painter.fillRect(self.rect(), self.overlay_color)
         else:
-             painter.fillRect(self.rect(), QColor(100, 100, 100))
-             painter.setPen(Qt.white)
-             painter.drawText(self.rect(), Qt.AlignCenter, "无法捕获屏幕截图")
-
+            painter.fillRect(self.rect(), QColor(100, 100, 100))
+            painter.setPen(Qt.white)
+            painter.drawText(self.rect(), Qt.AlignCenter, "无法捕获屏幕截图")
 
         # 如果正在选择，绘制清晰的选区和边框
-        if self.is_selecting and self.has_moved and not self.start_pos.isNull() and not self.end_pos.isNull():
+        if (
+            self.is_selecting
+            and self.has_moved
+            and not self.start_pos.isNull()
+            and not self.end_pos.isNull()
+        ):
             selection_rect = QRect(self.start_pos, self.end_pos).normalized()
 
             if self.full_screenshot and not self.full_screenshot.isNull():
-                 # 在遮罩层上显示选区部分的原始截图
-                 if self.is_macos:
-                     # 计算在截图中的对应区域
-                     screenshot_rect = self.calculate_screenshot_rect(selection_rect)
+                # 在遮罩层上显示选区部分的原始截图
+                if self.is_macos:
+                    # 计算在截图中的对应区域
+                    screenshot_rect = self.calculate_screenshot_rect(selection_rect)
 
-                     # 从原始截图中提取选择的区域并显示
-                     cropped_pixmap = self.full_screenshot.copy(screenshot_rect)
-                     painter.drawPixmap(selection_rect, cropped_pixmap)
-                 else:
-                     painter.setCompositionMode(QPainter.CompositionMode_SourceOver)
-                     painter.drawPixmap(selection_rect, self.full_screenshot, selection_rect)
-                     painter.setCompositionMode(QPainter.CompositionMode_SourceOver)
+                    # 从原始截图中提取选择的区域并显示
+                    cropped_pixmap = self.full_screenshot.copy(screenshot_rect)
+                    painter.drawPixmap(selection_rect, cropped_pixmap)
+                else:
+                    painter.setCompositionMode(QPainter.CompositionMode_SourceOver)
+                    painter.drawPixmap(
+                        selection_rect, self.full_screenshot, selection_rect
+                    )
+                    painter.setCompositionMode(QPainter.CompositionMode_SourceOver)
 
             # 绘制选区边框
             pen = QPen(Qt.red, 1, Qt.SolidLine)
@@ -142,9 +150,13 @@ class ScreenshotOverlay(QWidget):
             painter.setBrush(Qt.NoBrush)
             painter.drawRect(selection_rect)
 
-
         # 绘制鼠标位置的十字辅助线
-        if self.full_screenshot and not self.full_screenshot.isNull() and not self.end_pos.isNull() and not self.is_selecting:
+        if (
+            self.full_screenshot
+            and not self.full_screenshot.isNull()
+            and not self.end_pos.isNull()
+            and not self.is_selecting
+        ):
             pen_guide = QPen(Qt.red, 1, Qt.DotLine)
             painter.setPen(pen_guide)
             # 水平线
@@ -166,14 +178,18 @@ class ScreenshotOverlay(QWidget):
             int(selection_rect.x() * scale_x),
             int(selection_rect.y() * scale_y),
             int(selection_rect.width() * scale_x),
-            int(selection_rect.height() * scale_y)
+            int(selection_rect.height() * scale_y),
         )
 
         return screenshot_rect
 
     def mousePressEvent(self, event):
         """鼠标按下事件：开始选择"""
-        if event.button() == Qt.LeftButton and self.full_screenshot and not self.full_screenshot.isNull():
+        if (
+            event.button() == Qt.LeftButton
+            and self.full_screenshot
+            and not self.full_screenshot.isNull()
+        ):
             self.start_pos = event.pos()
             self.end_pos = event.pos()
             self.is_selecting = True
@@ -188,8 +204,10 @@ class ScreenshotOverlay(QWidget):
             if self.is_selecting:
                 # 检查是否移动了足够的距离
                 if not self.has_moved:
-                    move_distance = ((current_pos.x() - self.start_pos.x()) ** 2 +
-                                     (current_pos.y() - self.start_pos.y()) ** 2) ** 0.5
+                    move_distance = (
+                        (current_pos.x() - self.start_pos.x()) ** 2
+                        + (current_pos.y() - self.start_pos.y()) ** 2
+                    ) ** 0.5
                     if move_distance > 5:
                         self.has_moved = True
 
@@ -212,7 +230,9 @@ class ScreenshotOverlay(QWidget):
                     if selection_rect.width() > 5 and selection_rect.height() > 5:
                         if self.full_screenshot and not self.full_screenshot.isNull():
                             # 计算在原始截图中的精确区域
-                            screenshot_rect = self.calculate_screenshot_rect(selection_rect)
+                            screenshot_rect = self.calculate_screenshot_rect(
+                                selection_rect
+                            )
 
                             # 从原始高分辨率截图中提取区域
                             captured_pixmap = self.full_screenshot.copy(screenshot_rect)
@@ -262,4 +282,4 @@ class ScreenshotOverlay(QWidget):
         if event.key() == Qt.Key_Escape:
             self.logger.info("通过ESC键取消截图")
             self.screenshot_cancelled.emit()
-            self.close() # 关闭覆盖层
+            self.close()  # 关闭覆盖层

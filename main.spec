@@ -7,6 +7,7 @@ a = Analysis(
     binaries=[],
     datas=[
         ("./demo.yaml", "."),
+        ("./config.json", "."),
         ("./unimernet/configs", "unimernet/configs"),
         ("./models/unimernet_small/*.json", "models/unimernet_small"),
         ("./models/unimernet_small/*.pth", "models/unimernet_small"),
