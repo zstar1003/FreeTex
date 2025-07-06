@@ -4,6 +4,8 @@ import os
 import sys
 from typing import List
 
+import win32api
+import win32con
 from latex2mathml.converter import convert
 from PyQt5.QtCore import (
     QFile,
@@ -233,6 +235,9 @@ class MainWindow(QMainWindow):
         # 初始化系统托盘
         self.init_tray()
 
+        # 初始化剪贴板
+        self.clipboard = QApplication.clipboard()
+
     def initWindow(self):
         """
         初始化窗口设置
@@ -434,70 +439,42 @@ class MainWindow(QMainWindow):
 
     def start_screenshot_process(self):
         """
-        开始截图流程 - 确保主窗口完全隐藏后再显示截图覆盖层
+        触发Windows自带的截图功能(Win+Shift+S)
         """
-        self.logger.info("开始截图流程...")
-        self.hide()
-        QTimer.singleShot(200, self.create_and_show_overlay)
+        self.logger.info("触发Windows截图...")
+        # 确保剪贴板变化信号已连接
+        clipboard = QApplication.clipboard()
+        clipboard.dataChanged.connect(self.on_clipboard_change)
+        
+        # 模拟按下Win+Shift+S快捷键
+        win32api.keybd_event(win32con.VK_LWIN, 0, 0, 0)  # Win键按下
+        win32api.keybd_event(win32con.VK_LSHIFT, 0, 0, 0)  # Shift键按下
+        win32api.keybd_event(0x53, 0, 0, 0)  # S键按下
+        
+        win32api.keybd_event(0x53, 0, win32con.KEYEVENTF_KEYUP, 0)  # S键释放
+        win32api.keybd_event(win32con.VK_LSHIFT, 0, win32con.KEYEVENTF_KEYUP, 0)  # Shift键释放
+        win32api.keybd_event(win32con.VK_LWIN, 0, win32con.KEYEVENTF_KEYUP, 0)  # Win键释放
+        
+        # 显示提示
+        tooltip = StateToolTip("截图提示", "请使用Windows截图工具选择区域", self)
+        tooltip.setState(True)
+        tooltip.show()
+        tooltip.move(self.width() - tooltip.width() - 20, 20)
 
-    def create_and_show_overlay(self):
+    def on_clipboard_change(self):
         """
-        创建并显示截图覆盖层，确保覆盖层获得焦点
+        剪贴板内容变化的回调函数
         """
-        self.logger.info("创建截图覆盖层...")
-        if self.overlay is not None:
-            self.overlay.deleteLater()
-            self.overlay = None
+        clipboard = QApplication.clipboard()
+        mime_data = clipboard.mimeData()
 
-        self.overlay = ScreenshotOverlay()
-        self.overlay.screenshot_taken.connect(self.handle_screenshot_result)
-        self.overlay.screenshot_cancelled.connect(self.handle_screenshot_cancelled)
-
-        if self.overlay.full_screenshot is None:
-            self.logger.warning("截图捕获失败或取消")
-            self.show_and_activate_main_window()
-            self.imageLabel.setText("截图失败或取消")
-            self.latexEdit.setText("截图失败或取消")
-            self.overlay = None
-            return
-
-        self.logger.info("显示截图覆盖层...")
-        self.overlay.show()
-        self.overlay.activateWindow()
-        self.overlay.raise_()
-
-    def handle_screenshot_cancelled(self):
-        """处理截图取消事件"""
-        self.logger.info("截图已取消")
-        self.show_and_activate_main_window()
-        self.imageLabel.setText("截图已取消")
-        self.latexEdit.setText("截图已取消")
-        if self.overlay:
-            self.overlay.deleteLater()
-            self.overlay = None
-
-    def handle_screenshot_result(self, pixmap):
-        """
-        处理从ScreenshotOverlay返回的截图结果
-        """
-        self.logger.info(
-            f"接收到截图结果. 图片有效: {not pixmap.isNull()}, 大小: {pixmap.size()}"
-        )
-        QTimer.singleShot(100, self.show_and_activate_main_window)
-        QTimer.singleShot(150, lambda: self.display_result_pixmap(pixmap))
-
-        if self.overlay:
-            pass
-
-    def show_and_activate_main_window(self):
-        """显示并激活主窗口"""
-        self.logger.info("显示并激活主窗口...")
-        if self.overlay and self.overlay.isVisible():
-            self.overlay.hide()
-
-        self.showNormal()
-        self.activateWindow()
-        self.raise_()
+        if mime_data.hasImage():
+            image = clipboard.image()
+            if not image.isNull():
+                self.logger.info("检测到新的截图")
+                # 断开信号连接，避免重复处理
+                clipboard.dataChanged.disconnect(self.on_clipboard_change)
+                self.handle_clipboard_image(image)
 
     def display_result_pixmap(self, pixmap):
         """
