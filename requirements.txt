@@ -11,3 +11,4 @@ scipy==1.15.2
 PyQtWebEngine==5.15.7 
 PyQtWebEngine-Qt5==5.15.2
 pywin32>=306
+opencv-python>=4.8.0

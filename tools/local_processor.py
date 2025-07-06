@@ -6,6 +6,8 @@ from PyQt5.QtGui import QPixmap, QImage
 from PyQt5.QtCore import QObject, pyqtSignal, QBuffer, QByteArray, QIODevice
 from PIL import Image
 from io import BytesIO
+import cv2
+import numpy as np
 
 warnings.filterwarnings("ignore")
 
@@ -107,93 +109,125 @@ class LocalProcessor(QObject):
             self.logger.error(error_msg)
             self.finished.emit(error_msg)
 
-    def process_pixmap(self, pixmap: QPixmap):
-        """直接处理QPixmap对象"""
+    def preprocess_image(self, pixmap):
+        """
+        预处理图像，检测背景色并在必要时进行颜色反转
+        
+        Args:
+            pixmap: QPixmap对象
+            
+        Returns:
+            处理后的QPixmap对象
+        """
+        # 将QPixmap转换为numpy数组
+        image = self._pixmap_to_cv2(pixmap)
+        if image is None:
+            return pixmap
+
+        # 计算图像的平均亮度
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        mean_brightness = np.mean(gray)
+        
+        # 如果平均亮度小于128（暗色背景），进行颜色反转
+        if mean_brightness < 128:
+            self.logger.info(f"检测到深色背景（平均亮度：{mean_brightness}），进行颜色反转")
+            # 反转图像
+            image = cv2.bitwise_not(image)
+            # 转回QPixmap
+            return self._cv2_to_pixmap(image)
+        
+        self.logger.info(f"检测到浅色背景（平均亮度：{mean_brightness}），无需处理")
+        return pixmap
+
+    def _pixmap_to_cv2(self, pixmap):
+        """
+        将QPixmap转换为OpenCV格式
+        """
+        try:
+            # 转换QPixmap为QImage
+            image = pixmap.toImage()
+            # 获取图像数据
+            width = image.width()
+            height = image.height()
+            ptr = image.bits()
+            ptr.setsize(height * width * 4)
+            # 转换为numpy数组
+            arr = np.frombuffer(ptr, np.uint8).reshape((height, width, 4))
+            # 转换为BGR格式
+            return cv2.cvtColor(arr, cv2.COLOR_BGRA2BGR)
+        except Exception as e:
+            self.logger.error(f"图像转换失败: {str(e)}")
+            return None
+
+    def _cv2_to_pixmap(self, cv_img):
+        """
+        将OpenCV图像转换为QPixmap
+        """
+        try:
+            # 转换为RGB格式
+            rgb_image = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
+            # 创建QImage
+            height, width, channel = rgb_image.shape
+            bytes_per_line = 3 * width
+            q_image = QImage(rgb_image.data, width, height, bytes_per_line, QImage.Format_RGB888)
+            # 转换为QPixmap
+            return QPixmap.fromImage(q_image)
+        except Exception as e:
+            self.logger.error(f"图像转换失败: {str(e)}")
+            return None
+
+    def process_pixmap(self, pixmap):
+        """处理QPixmap图像"""
         try:
             if self.model is None or self.vis_processor is None:
-                self.logger.warning("模型尚未加载完成，无法处理QPixmap")
-                self.finished.emit("识别失败: 模型尚未加载完成")
+                self.finished.emit("模型未加载，无法处理图像")
                 return
 
-            self.logger.info("开始处理QPixmap...")
-            # 将QPixmap转换为QImage
-            q_image = pixmap.toImage()
+            # 预处理图像
+            processed_pixmap = self.preprocess_image(pixmap)
+            if processed_pixmap is None:
+                self.finished.emit("图像预处理失败")
+                return
 
-            if q_image.isNull():
-                raise ValueError("QPixmap转换为QImage失败，结果为null")
+            # 将QPixmap转换为PIL Image用于模型处理
+            pil_image = self._pixmap_to_pil(processed_pixmap)
+            if pil_image is None:
+                self.finished.emit("图像转换失败")
+                return
 
-            byte_array = QByteArray()
-            buffer_device = QBuffer(byte_array)
-
-            success = False
-            try:
-                # Open the buffer for writing
-                if not buffer_device.open(QIODevice.WriteOnly):
-                    raise IOError("无法打开QBuffer进行写入")
-
-                # Ensure the QImage is in a format suitable for saving to PNG
-                safe_formats = (
-                    QImage.Format_ARGB32,
-                    QImage.Format_RGB32,
-                    QImage.Format_ARGB32_Premultiplied,
-                    QImage.Format_RGB888,
-                )
-                if q_image.format() not in safe_formats:
-                    self.logger.debug(
-                        f"将QImage从格式{q_image.format()}转换为Format_ARGB32"
-                    )
-                    q_image = q_image.convertToFormat(QImage.Format_ARGB32)
-                    if q_image.isNull():
-                        raise ValueError("QImage格式转换失败")
-                else:
-                    self.logger.debug(f"QImage格式{q_image.format()}适合保存")
-
-                # Save the QImage to the QBuffer as a PNG file
-                success = q_image.save(buffer_device, "PNG")
-
-                if not success:
-                    raise IOError("无法将QImage保存为PNG到缓冲区")
-
-            finally:
-                # Always ensure the buffer is closed
-                if buffer_device.isOpen():
-                    buffer_device.close()
-
-            # Get the byte array from the buffer after saving
-            byte_array_data = byte_array.data()
-            if not byte_array_data:
-                raise IOError("保存QImage后QBuffer中没有数据")
-
-            self.logger.debug(
-                f"QImage已保存为PNG到QBuffer。缓冲区大小: {len(byte_array_data)}字节"
-            )
-
-            # Open the image from the buffer using PIL
-            buffer = BytesIO(byte_array_data)
-            pil_image = Image.open(buffer)
-            pil_image = pil_image.convert("RGB")
-
-            self.logger.debug(
-                f"QPixmap已通过QBuffer转换为PIL Image。尺寸: {pil_image.size}, 模式: {pil_image.mode}"
-            )
-
-            # Process the image using the visual processor
+            # 使用视觉处理器处理图像
             image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
-            self.logger.debug("PIL Image已通过视觉处理器处理")
-
-            # Perform inference
+            
+            # 使用模型进行推理
             with torch.no_grad():
                 output = self.model.generate({"image": image_tensor})
-            self.logger.debug("模型推理完成")
-
+            
             result = output["pred_str"][0]
-            self.logger.info(f"QPixmap识别结果:\n{result}")
+            self.logger.info(f"识别结果: {result}")
             self.finished.emit(result)
 
         except Exception as e:
-            error_msg = f"识别失败 (pixmap): {str(e)}"
-            self.logger.error(error_msg)
-            import traceback
+            self.logger.error(f"图像处理失败: {str(e)}")
+            self.finished.emit(f"识别失败: {str(e)}")
 
-            self.logger.error(traceback.format_exc())
-            self.finished.emit(error_msg)
+    def _pixmap_to_pil(self, pixmap):
+        """
+        将QPixmap转换为PIL Image
+        """
+        try:
+            # 转换QPixmap为QImage
+            image = pixmap.toImage()
+            # 获取图像数据
+            width = image.width()
+            height = image.height()
+            ptr = image.bits()
+            ptr.setsize(height * width * 4)
+            # 转换为numpy数组
+            arr = np.frombuffer(ptr, np.uint8).reshape((height, width, 4))
+            # 转换为RGB格式
+            rgb_array = cv2.cvtColor(arr, cv2.COLOR_BGRA2RGB)
+            # 转换为PIL Image
+            return Image.fromarray(rgb_array)
+        except Exception as e:
+            self.logger.error(f"图像转换失败: {str(e)}")
+            return None

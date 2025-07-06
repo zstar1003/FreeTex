@@ -1,5 +1,4 @@
 import base64
-import os
 from typing import List, Union
 
 from openai import OpenAI
