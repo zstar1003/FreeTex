@@ -6,11 +6,11 @@ from PIL import Image
 
 
 class FormulaRecognizer:
-    def __init__(self, api_key: str, model: str = "Qwen/Qwen2.5-72B-Instruct"):
+    def __init__(self, api_key: str, model: str = "Qwen/Qwen2.5-VL-72B-Instruct"):
         """
         初始化硅基流动API客户端
         :param api_key: 从硅基流动平台获取的API Key
-        :param model: 模型名称，默认为Qwen2.5-72B-Instruct
+        :param model: 模型名称，默认为Qwen/Qwen2.5-VL-72B-Instruct
         """
         self.client = OpenAI(
             api_key=api_key,

@@ -8,6 +8,7 @@ from PIL import Image
 from io import BytesIO
 import cv2
 import numpy as np
+import json
 
 warnings.filterwarnings("ignore")
 
@@ -195,20 +196,84 @@ class LocalProcessor(QObject):
                 self.finished.emit("图像转换失败")
                 return
 
-            # 使用视觉处理器处理图像
-            image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
-            
-            # 使用模型进行推理
-            with torch.no_grad():
-                output = self.model.generate({"image": image_tensor})
-            
-            result = output["pred_str"][0]
+            # 检查是否启用多模态识别
+            try:
+                with open("config.json", "r", encoding="utf-8") as f:
+                    config = json.load(f)
+                    model_config = config.get("model_config", {})
+                    if model_config.get("enabled", False):
+                        # 使用多模态识别
+                        result = self._process_with_multimodal(pil_image, model_config)
+                    else:
+                        # 使用本地模型识别
+                        image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
+                        with torch.no_grad():
+                            output = self.model.generate({"image": image_tensor})
+                        result = output["pred_str"][0]
+            except Exception as e:
+                self.logger.error(f"配置读取失败，使用本地模型: {str(e)}")
+                # 使用本地模型识别
+                image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
+                with torch.no_grad():
+                    output = self.model.generate({"image": image_tensor})
+                result = output["pred_str"][0]
+
             self.logger.info(f"识别结果: {result}")
             self.finished.emit(result)
 
         except Exception as e:
             self.logger.error(f"图像处理失败: {str(e)}")
             self.finished.emit(f"识别失败: {str(e)}")
+
+    def _process_with_multimodal(self, image, config):
+        """使用多模态模型处理图像"""
+        import base64
+        from io import BytesIO
+        from openai import OpenAI
+
+        # 将PIL Image转换为base64
+        buffer = BytesIO()
+        image.save(buffer, format="PNG")
+        base64_image = base64.b64encode(buffer.getvalue()).decode("utf-8")
+
+        # 创建OpenAI客户端
+        client = OpenAI(
+            api_key=config["api_key"],
+            base_url=config["api_url"]
+        )
+
+        # 准备消息
+        messages = [
+            {"role": "system", "content": config.get("system_prompt", "")},
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/png;base64,{base64_image}"
+                        }
+                    },
+                    {"type": "text", "text": "请将图中的数学公式转换为精确的单行LaTeX代码，禁止使用多行环境，不要添加任何额外描述。"}
+                ]
+            }
+        ]
+
+        # 发送请求
+        response = client.chat.completions.create(
+            model=config["model_name"],
+            messages=messages,
+            max_tokens=1024,
+            temperature=0.2
+        )
+
+        # 后处理
+        latex_code = response.choices[0].message.content
+        latex_code = latex_code.replace("\\begin{align}", "").replace("\\end{align}", "")
+        latex_code = latex_code.replace("\\begin{aligned}", "").replace("\\end{aligned}", "")
+        latex_code = " ".join(latex_code.split())  # 合并多余空格
+
+        return latex_code
 
     def _pixmap_to_pil(self, pixmap):
         """

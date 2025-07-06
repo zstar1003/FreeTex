@@ -3,5 +3,13 @@
         "screenshot": "Ctrl+Alt+Q",
         "upload": "Ctrl+U",
         "paste": "Ctrl+V"
+    },
+    "model_config": {
+        "enabled": false,
+        "provider": "硅基流动",
+        "api_url": "https://api.siliconflow.cn/v1",
+        "api_key": "",
+        "model_name": "Qwen/Qwen2.5-VL-72B-Instruct",
+        "system_prompt": "你是一个专业的数学公式识别系统，请严格按照以下要求操作：\n1. 专注识别图像中的数学公式、符号、希腊字母、运算符等\n2. 输出标准LaTeX代码，确保可被编译器解析\n3. 所有公式必须转换为单行格式（禁止使用\\begin{align}等多行环境）\n4. 多行公式用空格分隔或合并为单行\n5. 不添加解释性文字，直接输出纯净的LaTeX代码"
     }
 }

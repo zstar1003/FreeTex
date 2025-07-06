@@ -57,6 +57,7 @@ from qfluentwidgets import (
 )
 from tools.clipboard_handler import ClipboardHandler
 from tools.local_processor import LocalProcessor
+from tools.model_config_dialog import ModelConfigDialog
 
 # 软件版本号常量
 SOFTWARE_VERSION = "v0.3.0"
@@ -262,6 +263,11 @@ class MainWindow(QMainWindow):
         # 添加模型状态指示器
         self.modelStatus = ModelStatusWidget(statusBarWidget)
 
+        # 添加多模态设置按钮
+        self.modelConfigButton = FluentPushButton("多模态设置", statusBarWidget)
+        self.modelConfigButton.setIcon(FIF.SETTING)
+        self.modelConfigButton.clicked.connect(self.show_model_config)
+
         # 添加版本号标签
         versionLabel = QLabel(SOFTWARE_VERSION, statusBarWidget)
         versionLabel.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
@@ -270,6 +276,7 @@ class MainWindow(QMainWindow):
         # 将组件添加到状态栏布局
         statusBarLayout.addWidget(self.modelStatus)
         statusBarLayout.addStretch(1)
+        statusBarLayout.addWidget(self.modelConfigButton)
         statusBarLayout.addWidget(versionLabel)
 
         # 图片显示区域
@@ -781,6 +788,18 @@ class MainWindow(QMainWindow):
         """完全退出应用程序"""
         self.tray_icon.hide()
         QApplication.quit()
+
+    def show_model_config(self):
+        """显示模型配置对话框"""
+        dialog = ModelConfigDialog(self)
+        if dialog.exec_():
+            # 重新加载配置
+            self.config = self.load_config()
+            # 显示提示
+            tooltip = StateToolTip("设置已更新", "多模态识别设置已更新", self)
+            tooltip.setState(True)
+            tooltip.show()
+            tooltip.move(self.width() - tooltip.width() - 20, 20)
 
 
 class App(QApplication):
