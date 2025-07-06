@@ -57,7 +57,6 @@ from qfluentwidgets import (
 )
 from tools.clipboard_handler import ClipboardHandler
 from tools.local_processor import LocalProcessor
-from tools.screenshot import ScreenshotOverlay
 
 # 软件版本号常量
 SOFTWARE_VERSION = "v0.3.0"
@@ -666,10 +665,6 @@ class MainWindow(QMainWindow):
                 self.logger.warning("处理器线程未正常终止")
             else:
                 self.logger.info("处理器线程已停止")
-
-            if self.overlay is not None and self.overlay.isVisible():
-                self.overlay.close()
-                self.overlay = None
 
             self.tray_icon.hide()  # 确保托盘图标被移除
             event.accept()
