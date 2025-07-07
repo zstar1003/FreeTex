@@ -4,8 +4,6 @@ import os
 import sys
 from typing import List
 
-import win32api
-import win32con
 from latex2mathml.converter import convert
 from PyQt5.QtCore import (
     QFile,
@@ -354,11 +352,6 @@ class MainWindow(QMainWindow):
         self.uploadButton.setIcon(FIF.PHOTO)
         self.uploadButton.clicked.connect(self.uploadImage)
 
-        # 截图按钮
-        self.screenshotButton = FluentPushButton("截图", self.centralWidget)
-        self.screenshotButton.setIcon(FIF.CUT)
-        self.screenshotButton.clicked.connect(self.start_screenshot_process)
-        self.screenshotButton.setToolTip(f"快捷键: {self.config.get('shortcuts', {}).get('screenshot', 'Ctrl+Alt+Q')}")
 
         # 复制识别结果(Latex) 按钮
         self.copyButton = FluentPushButton("复制识别结果(Latex)", self.centralWidget)
@@ -459,54 +452,6 @@ class MainWindow(QMainWindow):
                 self.latexEdit.setText("错误：无法加载图片")
                 self.imageLabel.setText("错误：无法加载图片")
 
-    def start_screenshot_process(self):
-        """
-        触发Windows自带的截图功能(Win+Shift+S)
-        """
-        self.logger.info("触发Windows截图...")
-        # 确保剪贴板变化信号已连接
-        clipboard = QApplication.clipboard()
-        clipboard.dataChanged.connect(self.on_clipboard_change)
-        
-        # 隐藏主窗口并等待一小段时间再触发截图
-        self.hide()
-        # 增加延迟以确保窗口完全隐藏
-        QTimer.singleShot(300, self._trigger_screenshot)
-
-    def _trigger_screenshot(self):
-        """
-        实际触发Windows截图快捷键
-        """
-        try:
-            # 释放可能已经按下的按键
-            for vk in [win32con.VK_LWIN, win32con.VK_LSHIFT, 0x53]:
-                win32api.keybd_event(vk, 0, win32con.KEYEVENTF_KEYUP, 0)
-
-            # 模拟按下Win+Shift+S快捷键
-            # 使用扫描码以提高可靠性
-            win32api.keybd_event(win32con.VK_LWIN, 0x5B, 0, 0)  # Win键按下
-            win32api.keybd_event(win32con.VK_LSHIFT, 0x2A, 0, 0)  # Shift键按下
-            win32api.keybd_event(0x53, 0x1F, 0, 0)  # S键按下
-            
-            # 适当延迟后释放按键
-            QTimer.singleShot(200, lambda: [
-                win32api.keybd_event(0x53, 0x1F, win32con.KEYEVENTF_KEYUP, 0),  # S键释放
-                win32api.keybd_event(win32con.VK_LSHIFT, 0x2A, win32con.KEYEVENTF_KEYUP, 0),  # Shift键释放
-                win32api.keybd_event(win32con.VK_LWIN, 0x5B, win32con.KEYEVENTF_KEYUP, 0)  # Win键释放
-            ])
-            
-            # 显示提示
-            tooltip = StateToolTip("截图提示", "请使用Windows截图工具选择区域", self)
-            tooltip.setState(True)
-            tooltip.show()
-            tooltip.move(self.width() - tooltip.width() - 20, 20)
-
-            # 设置定时器，如果一段时间后没有收到剪贴板变化，就重新显示窗口
-            QTimer.singleShot(10000, self._ensure_window_visible)
-            
-        except Exception as e:
-            self.logger.error(f"触发截图快捷键时出错: {e}")
-            self.show()  # 出错时确保窗口可见
 
     def _ensure_window_visible(self):
         """
@@ -645,7 +590,6 @@ class MainWindow(QMainWindow):
         self.logger.debug(f"截图快捷键: {screenshot_seq}")
         self.shortcut_screenshot = QShortcut(QKeySequence(screenshot_seq), self)
         self.shortcut_screenshot.setEnabled(True)
-        self.shortcut_screenshot.activated.connect(self.start_screenshot_process)
 
         # 上传图片快捷键
         upload_seq = shortcuts.get("upload", "Ctrl+U")

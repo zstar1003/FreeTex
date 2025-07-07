@@ -3,7 +3,7 @@ name: Build macOS DMG
 on:
   push:
     branches:
-      - main  # 在 main 分支上的推送触发
+      - mac  # 在 mac 分支上的推送触发
     paths-ignore:
       - '**.md'
       - 'docs/**'
