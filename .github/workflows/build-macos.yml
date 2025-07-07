@@ -11,14 +11,7 @@ on:
 
 jobs:
   build-macos:
-    strategy:
-      matrix:
-        include:
-          - arch: arm64
-            runner: macos-14
-          - arch: x86_64
-            runner: macos-13
-    runs-on: ${{ matrix.runner }}
+    runs-on: macos-14
     
     steps:
     - uses: actions/checkout@v4
@@ -28,7 +21,7 @@ jobs:
       with:
         python-version: '3.10'
         cache: 'pip'
-        architecture: ${{ matrix.arch }}
+        architecture: 'arm64'
     
     - name: Install dependencies
       run: |
@@ -63,11 +56,11 @@ jobs:
     
     - name: Prepare spec file
       run: |
-        sed -i '' "s/target_arch=None/target_arch='${{ matrix.arch }}'/" main.spec
+        sed -i '' "s/target_arch=None/target_arch='arm64'/" main.spec
     
     - name: Build app
       env:
-        ARCHFLAGS: "-arch ${{ matrix.arch }}"
+        ARCHFLAGS: "-arch arm64"
         MACOSX_DEPLOYMENT_TARGET: "11.0"
       run: |
         pyinstaller main.spec
@@ -91,19 +84,19 @@ jobs:
         default_view = 'icon-view'
         EOF
         
-        dmgbuild -s dmg_settings.py "FreeTex" "dist/FreeTex-${{ matrix.arch }}.dmg"
+        dmgbuild -s dmg_settings.py "FreeTex" dist/FreeTex-arm64.dmg
         
     - name: Upload DMG artifact
       uses: actions/upload-artifact@v4
       with:
-        name: FreeTex-macos-${{ matrix.arch }}
-        path: dist/FreeTex-${{ matrix.arch }}.dmg
+        name: FreeTex-macos-arm64
+        path: dist/FreeTex-arm64.dmg
         
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
-        files: dist/FreeTex-${{ matrix.arch }}.dmg
+        files: dist/FreeTex-arm64.dmg
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
