@@ -42,7 +42,7 @@ exe = EXE(
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
-    target_arch=None,
+    target_arch='arm64',
     codesign_identity=None,
     entitlements_file=None,
 )
@@ -60,6 +60,6 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='FreeTeX.app',
-    icon='images/icon.icns',
+    icon='resources/images/icon.icns',
     bundle_identifier=None,
 )
