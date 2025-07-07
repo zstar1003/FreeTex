@@ -45,12 +45,16 @@ jobs:
         pip install pyqt5_frameless_window
         pip install scipy
     
+    - name: Prepare spec file
+      run: |
+        sed -i '' "s/target_arch=None/target_arch='${{ matrix.arch }}'/" main.spec
+    
     - name: Build app
       env:
         ARCHFLAGS: "-arch ${{ matrix.arch }}"
         MACOSX_DEPLOYMENT_TARGET: "11.0"
       run: |
-        pyinstaller main.spec --target-arch ${{ matrix.arch }}
+        pyinstaller main.spec
         
     - name: Create DMG
       run: |
