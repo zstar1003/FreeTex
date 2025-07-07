@@ -6,7 +6,7 @@ model:
     max_seq_len: 1536
 
   load_pretrained: True
-  pretrained: './models/unimernet_small/unimernet_small_fp16.pth'
+  pretrained: './models/unimernet_small/unimernet_small.pth'
   tokenizer_config:
     path: ./models/unimernet_small
 

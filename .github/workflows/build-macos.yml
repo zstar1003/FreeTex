@@ -44,6 +44,17 @@ jobs:
         pip install Pillow
         pip install pyqt5_frameless_window
         pip install scipy
+
+    - name: Setup Git LFS
+      run: |
+        brew install git-lfs
+        git lfs install
+        
+    - name: Download model files
+      run: |
+        cd models
+        git clone https://huggingface.co/wanderkid/unimernet_small
+        cd ..
     
     - name: Prepare spec file
       run: |
