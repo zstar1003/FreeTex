@@ -11,7 +11,8 @@ a = Analysis(
         ("./unimernet/configs", "unimernet/configs"),
         ("./models/unimernet_small/*.json", "models/unimernet_small"),
         ("./models/unimernet_small/*.pth", "models/unimernet_small"),
-        (".venv/Lib/site-packages/transformers/models/gemma2", "transformers/models/gemma2"),
+        ("transformers/models/gemma2", "transformers/models/gemma2"),
+        ("latex2mathml", "latex2mathml"),
         ("libs/katex", "libs/katex")
     ],
     hiddenimports=[
