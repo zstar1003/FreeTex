@@ -240,7 +240,6 @@ class MainWindow(QMainWindow):
         # 初始化UI状态：模型加载中，禁用相关按钮
         self.modelStatus.setLoading()
         self.uploadButton.setEnabled(False)
-        self.screenshotButton.setEnabled(False)
 
         self.overlay = None  # 用于存储截图覆盖层实例
         self.original_pixmap = None  # 保存原始（未缩放）的截图或上传图片
@@ -381,7 +380,6 @@ class MainWindow(QMainWindow):
 
         # 添加按钮到布局
         buttonLayout.addWidget(self.uploadButton)
-        buttonLayout.addWidget(self.screenshotButton)
         buttonLayout.addWidget(self.copyWordButton)
         buttonLayout.addWidget(self.copyButton)
         buttonLayout.addStretch(1)
@@ -412,13 +410,11 @@ class MainWindow(QMainWindow):
         if "失败" in device_info:
             self.modelStatus.setLoadingFailed(device_info)
             self.uploadButton.setEnabled(False)
-            self.screenshotButton.setEnabled(False)
             tooltip_text = f"模型加载失败: {device_info}"
             tooltip_state = False
         else:
             self.modelStatus.setLoaded(device_info)
             self.uploadButton.setEnabled(True)
-            self.screenshotButton.setEnabled(True)
             self.copyButton.setEnabled(True)
             tooltip_text = f"模型加载完成: {device_info}"
             tooltip_state = True
