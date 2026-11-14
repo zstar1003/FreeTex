@@ -195,12 +195,12 @@ class ModelConfigDialog(QDialog):
                 self.enableRadioNo.setChecked(not is_enabled)
                 
                 self.providerComboBox.setCurrentText(model_config.get("provider", "硅基流动"))
-                self.apiUrlEdit.setText(model_config.get("api_url", "https://api.siliconflow.cn/v1"))
-                self.apiKeyEdit.setText(model_config.get("api_key", ""))
-                self.modelEdit.setText(model_config.get("model_name", "Qwen/Qwen2.5-VL-72B-Instruct"))
-                
-                # 根据提供商设置URL编辑状态
+                # 先应用提供商默认值和编辑状态，再恢复保存的字段。
+                # 初始化和用户主动切换提供商不同，不能覆盖已保存的设置。
                 self.on_provider_changed(self.providerComboBox.currentText())
+                self.apiUrlEdit.setText(model_config.get("api_url", self.apiUrlEdit.text()))
+                self.apiKeyEdit.setText(model_config.get("api_key", ""))
+                self.modelEdit.setText(model_config.get("model_name", self.modelEdit.text()))
         except Exception as e:
             InfoBar.error(
                 title="错误",
