@@ -99,3 +99,6 @@ python main.py
 ## Star History
 
 ![Star History](https://starchart.cc/zstar1003/FreeTex.svg)
+### 多模态设置中的连接检查
+
+“测试模型列表”仅请求配置服务的 `/models`，不发送图片、不执行模型推理。成功不代表所选模型支持视觉识别；失败也可能仅表示服务不支持模型列表接口。实际识别通过 `/chat/completions` 发送所选模型和图片，需要单独验证。

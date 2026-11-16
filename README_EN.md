@@ -97,3 +97,6 @@ Thanks to the contributors to this project:
 ## Star History
 
 ![Star History](https://starchart.cc/zstar1003/FreeTex.svg)
+### Multimodal connection check
+
+The **测试模型列表** (Test model list) button only requests `/models` from the configured service. It does not upload an image or run model inference. Success does not verify the selected model's vision capabilities; failure may only mean the service does not support listing models. Actual recognition sends the selected model and image to `/chat/completions` and must be verified separately.

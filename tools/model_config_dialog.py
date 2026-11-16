@@ -111,8 +111,9 @@ class ModelConfigDialog(QDialog):
 
         # 添加测试连接按钮（居中）
         test_button_layout = QHBoxLayout()
-        self.testButton = PushButton("测试连接")
-        self.testButton.setFixedWidth(120)
+        self.testButton = PushButton("测试模型列表")
+        self.testButton.setToolTip("仅访问 /models；不发送图片，也不验证所选模型的视觉识别能力。")
+        self.testButton.setFixedWidth(140)
         self.testButton.clicked.connect(self.test_connection)
         test_button_layout.addStretch()
         test_button_layout.addWidget(self.testButton)
@@ -261,29 +262,29 @@ class ModelConfigDialog(QDialog):
             return False
 
     def test_connection(self):
-        """测试API连接"""
+        """仅测试模型列表端点，不调用视觉识别或上传图片。"""
         try:
             from openai import OpenAI
             client = OpenAI(
                 api_key=self.apiKeyEdit.text(),
                 base_url=self.apiUrlEdit.text()
             )
-            # 发送一个简单的请求测试连接
-            response = client.models.list()
+            # 此端点与实际识别的 /chat/completions 独立。
+            client.models.list()
             
             InfoBar.success(
                 title="成功",
-                content="API连接测试成功",
+                content="模型列表访问成功。\n尚未验证所选模型的视觉识别能力。",
                 orient=Qt.Horizontal,
                 isClosable=True,
                 position=InfoBarPosition.TOP,
-                duration=2000,
+                duration=6000,
                 parent=self
             )
         except Exception as e:
             InfoBar.error(
                 title="错误",
-                content=f"API连接测试失败: {str(e)}",
+                content=f"模型列表访问失败: {str(e)}\n此结果不代表视觉识别接口不可用。",
                 orient=Qt.Horizontal,
                 isClosable=True,
                 position=InfoBarPosition.TOP,
