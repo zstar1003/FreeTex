@@ -26,6 +26,7 @@ class RecognitionRoutingTest(unittest.TestCase):
         self.torch = MagicMock()
         self.process = method("tools/local_processor.py", "process_pixmap", {
             "json": json, "sys": sys, "os": os, "torch": self.torch,
+            "read_config": lambda: json.load(open("mock-config.json")),
             "__file__": str(ROOT / "tools/local_processor.py")
         })
         self.processor = SimpleNamespace(

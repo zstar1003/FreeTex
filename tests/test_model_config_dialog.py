@@ -23,6 +23,9 @@ class ModelConfigDialogTest(unittest.TestCase):
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
         self.config_path = Path(self.directory.name) / "config.json"
+        patcher = patch("tools.config_store.config_path", return_value=self.config_path)
+        patcher.start()
+        self.addCleanup(patcher.stop)
         self.dialogs = []
         self.addCleanup(lambda: [dialog.close() for dialog in self.dialogs])
         for target in ("InfoBar.success", "InfoBar.error"):
@@ -217,6 +220,23 @@ class ModelConfigDialogTest(unittest.TestCase):
         self.successes.assert_not_called()
         self.assertIn("404 models endpoint", self.errors.call_args.kwargs["content"])
         self.assertIn("不代表视觉识别接口不可用", self.errors.call_args.kwargs["content"])
+
+    def test_shortcut_save_preserves_latest_model_config(self):
+        from tools.shortcut_config_dialog import ShortcutConfigDialog
+        from tools.config_store import update_config_section
+        self.write_config("自定义")
+        dialog = ShortcutConfigDialog()
+        self.dialogs.append(dialog)
+        update_config_section("model_config", {"model_name": "updated-after-dialog-open"})
+        dialog.screenshotEdit.setText("Ctrl+Alt+Q")
+        dialog.uploadEdit.setText("Ctrl+U")
+        dialog.pasteEdit.setText("Alt+V")
+        with patch("PyQt5.QtCore.QTimer.singleShot"):
+            dialog.save_and_accept()
+        saved = json.loads(self.config_path.read_text())
+        self.assertEqual(saved["model_config"]["model_name"], "updated-after-dialog-open")
+        self.assertEqual(saved["model_config"]["api_key"], "test-only-key")
+        self.assertEqual(saved["shortcuts"]["paste"], "Alt+V")
 
     def test_saved_settings_survive_open_confirm_and_reopen(self):
         for provider in ("硅基流动", "自定义"):
