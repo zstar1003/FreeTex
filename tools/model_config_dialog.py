@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QObject, QRunnable, QThreadPool, pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLabel, 
     QWidget, QFormLayout, QDialogButtonBox, QRadioButton
@@ -24,6 +24,31 @@ def resource_path(relative_path):
         base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
+
+class ModelListSignals(QObject):
+    finished = pyqtSignal(int, bool, str)
+
+
+class ModelListTask(QRunnable):
+    """Own the network client off the GUI thread; never access widgets here."""
+    def __init__(self, request_id, api_key, base_url):
+        super().__init__()
+        self.request_id = request_id
+        self.api_key = api_key
+        self.base_url = base_url
+        self.signals = ModelListSignals()
+
+    def run(self):
+        try:
+            from openai import OpenAI
+            # Bound network waits and avoid the SDK's automatic retries.
+            with OpenAI(api_key=self.api_key, base_url=self.base_url,
+                        timeout=10.0, max_retries=0) as client:
+                client.models.list()
+            self.signals.finished.emit(self.request_id, True, "")
+        except Exception as error:
+            self.signals.finished.emit(self.request_id, False, str(error))
+
 class ModelConfigDialog(QDialog):
     """模型配置对话框"""
 
@@ -33,6 +58,9 @@ class ModelConfigDialog(QDialog):
         # 移除问号按钮
         self.setWindowFlags(Qt.Dialog | Qt.MSWindowsFixedSizeDialogHint | Qt.WindowCloseButtonHint)
         self.setModal(True)
+        self._connection_request_id = 0
+        self._connection_pending = False
+        self.finished.connect(self._invalidate_connection_test)
 
         # 加载字体
         try:
@@ -263,33 +291,53 @@ class ModelConfigDialog(QDialog):
 
     def test_connection(self):
         """仅测试模型列表端点，不调用视觉识别或上传图片。"""
-        try:
-            from openai import OpenAI
-            client = OpenAI(
-                api_key=self.apiKeyEdit.text(),
-                base_url=self.apiUrlEdit.text()
-            )
-            # 此端点与实际识别的 /chat/completions 独立。
-            client.models.list()
-            
+        if self._connection_pending:
+            return
+        self._connection_request_id += 1
+        self._connection_pending = True
+        self.testButton.setEnabled(False)
+        self._set_connection_fields_enabled(False)
+        self.testButton.setText("正在测试…")
+        task = ModelListTask(self._connection_request_id,
+                             self.apiKeyEdit.text(), self.apiUrlEdit.text())
+        task.signals.finished.connect(self._connection_test_finished, Qt.QueuedConnection)
+        # The application pool outlives this dialog; closing does not destroy
+        # a running QThread or wait for the network on the GUI thread.
+        QThreadPool.globalInstance().start(task)
+
+    def _set_connection_fields_enabled(self, enabled):
+        # Keep the displayed configuration consistent with the in-flight check.
+        for field in (self.providerComboBox, self.apiUrlEdit, self.apiKeyEdit, self.modelEdit):
+            field.setEnabled(enabled)
+
+    def _invalidate_connection_test(self, _result):
+        self._connection_request_id += 1
+        self._connection_pending = False
+        self.testButton.setEnabled(True)
+        self._set_connection_fields_enabled(True)
+        self.testButton.setText("测试模型列表")
+
+    @pyqtSlot(int, bool, str)
+    def _connection_test_finished(self, request_id, success, error):
+        if request_id != self._connection_request_id:
+            return
+        self._connection_pending = False
+        self.testButton.setEnabled(True)
+        self._set_connection_fields_enabled(True)
+        self.testButton.setText("测试模型列表")
+        if success:
             InfoBar.success(
                 title="成功",
                 content="模型列表访问成功。\n尚未验证所选模型的视觉识别能力。",
-                orient=Qt.Horizontal,
-                isClosable=True,
-                position=InfoBarPosition.TOP,
-                duration=6000,
-                parent=self
+                orient=Qt.Horizontal, isClosable=True,
+                position=InfoBarPosition.TOP, duration=6000, parent=self
             )
-        except Exception as e:
+        else:
             InfoBar.error(
                 title="错误",
-                content=f"模型列表访问失败: {str(e)}\n此结果不代表视觉识别接口不可用。",
-                orient=Qt.Horizontal,
-                isClosable=True,
-                position=InfoBarPosition.TOP,
-                duration=3000,
-                parent=self
+                content=f"模型列表访问失败: {error}\n此结果不代表视觉识别接口不可用。",
+                orient=Qt.Horizontal, isClosable=True,
+                position=InfoBarPosition.TOP, duration=6000, parent=self
             )
 
     def accept(self):
