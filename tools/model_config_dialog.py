@@ -1,6 +1,7 @@
+from tools.config_store import read_config, update_config_section
 from PyQt5.QtCore import Qt, QObject, QRunnable, QThreadPool, pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import (
-    QDialog, QVBoxLayout, QHBoxLayout, QLabel, 
+    QDialog, QVBoxLayout, QHBoxLayout, QLabel,
     QWidget, QFormLayout, QDialogButtonBox, QRadioButton
 )
 from PyQt5.QtGui import QFontDatabase
@@ -74,7 +75,7 @@ class ModelConfigDialog(QDialog):
                     print(f"Successfully loaded font family: {font_families[0]}")
         except Exception as e:
             print(f"Error loading font: {str(e)}")
-        
+
         # 创建主布局
         layout = QVBoxLayout(self)
         layout.setSpacing(20)
@@ -87,24 +88,24 @@ class ModelConfigDialog(QDialog):
         form_layout.setLabelAlignment(Qt.AlignRight | Qt.AlignVCenter)
         form_layout.setFormAlignment(Qt.AlignLeft | Qt.AlignVCenter)
         form_layout.setContentsMargins(0, 0, 0, 0)
-        
+
         # 启用状态（使用单选按钮）
         enable_widget = QWidget()
         enable_layout = QHBoxLayout(enable_widget)
         enable_layout.setContentsMargins(0, 0, 0, 0)
         enable_layout.setSpacing(20)
-        
+
         self.enableRadioYes = QRadioButton("是")
         self.enableRadioNo = QRadioButton("否")
         enable_layout.addWidget(self.enableRadioYes)
         enable_layout.addWidget(self.enableRadioNo)
         enable_layout.addStretch()
-        
+
         # 创建带有额外左边距的标签
         enable_label = QLabel("启用多模态识别:")
         enable_label.setContentsMargins(20, 0, 0, 0)
         form_layout.addRow(enable_label, enable_widget)
-        
+
         # 模型提供商
         provider_label = QLabel("模型提供商:")
         provider_label.setContentsMargins(20, 0, 0, 0)
@@ -155,16 +156,16 @@ class ModelConfigDialog(QDialog):
         self.cancelButton = PushButton("取消")
         button_box.addButton(self.okButton, QDialogButtonBox.AcceptRole)
         button_box.addButton(self.cancelButton, QDialogButtonBox.RejectRole)
-        
+
         # 连接信号
         self.okButton.clicked.connect(self.accept)
         self.cancelButton.clicked.connect(self.reject)
-        
+
         layout.addWidget(button_box)
 
         # 设置固定大小
         self.setFixedSize(500, 400)
-        
+
         # 加载配置
         self.load_config()
 
@@ -212,24 +213,21 @@ class ModelConfigDialog(QDialog):
     def load_config(self):
         """从配置文件加载设置"""
         try:
-            import json
-            config_path = resource_path("config.json")
-            with open(config_path, "r", encoding="utf-8") as f:
-                config = json.load(f)
-                model_config = config.get("model_config", {})
-                
-                # 设置控件值
-                is_enabled = model_config.get("enabled", False)
-                self.enableRadioYes.setChecked(is_enabled)
-                self.enableRadioNo.setChecked(not is_enabled)
-                
-                self.providerComboBox.setCurrentText(model_config.get("provider", "硅基流动"))
-                # 先应用提供商默认值和编辑状态，再恢复保存的字段。
-                # 初始化和用户主动切换提供商不同，不能覆盖已保存的设置。
-                self.on_provider_changed(self.providerComboBox.currentText())
-                self.apiUrlEdit.setText(model_config.get("api_url", self.apiUrlEdit.text()))
-                self.apiKeyEdit.setText(model_config.get("api_key", ""))
-                self.modelEdit.setText(model_config.get("model_name", self.modelEdit.text()))
+            config = read_config()
+            model_config = config.get("model_config", {})
+
+            # 设置控件值
+            is_enabled = model_config.get("enabled", False)
+            self.enableRadioYes.setChecked(is_enabled)
+            self.enableRadioNo.setChecked(not is_enabled)
+
+            self.providerComboBox.setCurrentText(model_config.get("provider", "硅基流动"))
+            # 先应用提供商默认值和编辑状态，再恢复保存的字段。
+            # 初始化和用户主动切换提供商不同，不能覆盖已保存的设置。
+            self.on_provider_changed(self.providerComboBox.currentText())
+            self.apiUrlEdit.setText(model_config.get("api_url", self.apiUrlEdit.text()))
+            self.apiKeyEdit.setText(model_config.get("api_key", ""))
+            self.modelEdit.setText(model_config.get("model_name", self.modelEdit.text()))
         except Exception as e:
             InfoBar.error(
                 title="错误",
@@ -244,17 +242,8 @@ class ModelConfigDialog(QDialog):
     def save_config(self):
         """保存设置到配置文件"""
         try:
-            import json
-            config_path = resource_path("config.json")
-            # 读取现有配置
-            try:
-                with open(config_path, "r", encoding="utf-8") as f:
-                    config = json.load(f)
-            except:
-                config = {}
-
             # 更新模型配置
-            config["model_config"] = {
+            model_config = {
                 "enabled": self.enableRadioYes.isChecked(),
                 "provider": self.providerComboBox.currentText(),
                 "api_url": self.apiUrlEdit.text(),
@@ -263,9 +252,7 @@ class ModelConfigDialog(QDialog):
                 "system_prompt": "你是一个专业的数学公式识别系统，请严格按照以下要求操作：\n1. 专注识别图像中的数学公式、符号、希腊字母、运算符等\n2. 输出标准LaTeX代码，确保可被编译器解析\n3. 所有公式必须转换为单行格式（禁止使用\\begin{align}等多行环境）\n4. 多行公式用空格分隔或合并为单行\n5. 不添加解释性文字，直接输出纯净的LaTeX代码"
             }
 
-            # 保存配置
-            with open(config_path, "w", encoding="utf-8") as f:
-                json.dump(config, f, indent=4, ensure_ascii=False)
+            update_config_section("model_config", model_config)
 
             InfoBar.success(
                 title="成功",
@@ -343,4 +330,4 @@ class ModelConfigDialog(QDialog):
     def accept(self):
         """点击确定按钮的处理"""
         if self.save_config():
-            super().accept() 
+            super().accept()

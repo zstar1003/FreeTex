@@ -106,3 +106,13 @@ The check runs in the background and ignores repeated clicks while pending. Netw
 ### Recognition routing and failures
 
 With multimodal recognition enabled, requests no longer require a successfully loaded local model. Provider errors or unreadable configuration are displayed as recognition failures, without silently switching to local inference, announcing success or enabling copying of error text. To use local recognition, disable multimodal recognition in settings. Local model initialization still follows the existing startup flow; this change does not skip startup loading or validate live provider compatibility.
+
+### Settings storage and migration
+
+Settings, including API keys, live in the current user profile instead of bundled `_MEIPASS` resources: `~/Library/Application Support/FreeTex/config.json` on macOS, `%APPDATA%/FreeTex/config.json` on Windows, and `$XDG_CONFIG_HOME/FreeTex/config.json` on Linux (default `~/.config`). Source runs use the same location.
+
+On first read, the currently available legacy `config.json` is migrated without modifying the original. Existing user settings take precedence over new bundled defaults. Failed migration/parsing does not overwrite legacy data; failed saves do not truncate existing settings. Settings already lost with an old onefile temporary directory cannot be recovered.
+
+This is local plaintext JSON, not a credential vault. New files have owner-only permissions (0600) on POSIX; Windows uses the profile directory access controls. Do not share configuration containing API keys. Tests use temporary directories and synthetic credentials only; signed packages and native cross-platform filesystems have not been validated.
+
+Avoid editing settings from multiple FreeTex instances simultaneously (normal saves use an in-process lock). Filesystems without hard-link support may reject initial migration explicitly; the original remains intact.

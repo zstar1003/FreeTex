@@ -1,3 +1,4 @@
+from tools.config_store import read_config, update_config_section
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLabel,
@@ -9,20 +10,6 @@ from qfluentwidgets import (
     InfoBar,
     InfoBarPosition,
 )
-import json
-import os
-import sys
-
-
-def resource_path(relative_path):
-    """获取资源的绝对路径"""
-    if getattr(sys, 'frozen', False):
-        # 运行在 PyInstaller bundle 中
-        base_path = sys._MEIPASS
-    else:
-        # 运行在普通 Python 环境中
-        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
 
 
 class ShortcutLineEdit(LineEdit):
@@ -126,9 +113,7 @@ class ShortcutConfigDialog(QDialog):
     def load_config(self):
         """加载配置文件"""
         try:
-            config_path = resource_path("config.json")
-            with open(config_path, "r", encoding="utf-8") as f:
-                self.config = json.load(f)
+            self.config = read_config()
         except Exception as e:
             print(f"加载配置失败: {e}")
             self.config = {"shortcuts": {}}
@@ -172,9 +157,7 @@ class ShortcutConfigDialog(QDialog):
 
         # 保存到文件
         try:
-            config_path = resource_path("config.json")
-            with open(config_path, "w", encoding="utf-8") as f:
-                json.dump(self.config, f, indent=4, ensure_ascii=False)
+            update_config_section("shortcuts", self.config["shortcuts"])
 
             InfoBar.success(
                 title="成功",

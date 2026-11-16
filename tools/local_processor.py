@@ -1,3 +1,4 @@
+from tools.config_store import read_config
 import torch
 import warnings
 import argparse
@@ -264,14 +265,7 @@ class LocalProcessor(QObject):
     def process_pixmap(self, pixmap):
         """Route by configured provider; never silently replace cloud failures."""
         try:
-            if getattr(sys, "frozen", False):
-                config_path = os.path.join(sys._MEIPASS, "config.json")
-            else:
-                config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config.json")
-            # Invalid/unreadable configuration is an error, not permission to
-            # silently choose a different recognition backend.
-            with open(config_path, "r", encoding="utf-8") as f:
-                model_config = json.load(f).get("model_config", {})
+            model_config = read_config().get("model_config", {})
             use_multimodal = model_config.get("enabled", False)
             if not use_multimodal and (self.model is None or self.vis_processor is None):
                 raise RuntimeError("模型未加载，无法处理图像")

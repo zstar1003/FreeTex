@@ -1,3 +1,4 @@
+from tools.config_store import read_config
 import json
 import logging
 import os
@@ -716,12 +717,9 @@ class MainWindow(QMainWindow):
     def load_config(self):
         """加载配置文件"""
         try:
-            # 使用resource_path函数获取正确的配置文件路径
-            config_path = resource_path("config.json")
-            with open(config_path, "r", encoding="utf-8") as f:
-                config = json.load(f)
-                self.logger.info("配置文件加载成功")
-                return config
+            config = read_config()
+            self.logger.info("配置文件加载成功")
+            return config
         except FileNotFoundError:
             self.logger.warning("配置文件未找到")
             return {}
