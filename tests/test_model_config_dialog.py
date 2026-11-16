@@ -3,7 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 from PyQt5.QtWidgets import QApplication
 from tools.model_config_dialog import ModelConfigDialog, resource_path
@@ -24,6 +24,8 @@ class ModelConfigDialogTest(unittest.TestCase):
             patcher = patch("tools.model_config_dialog." + target)
             mock = patcher.start()
             self.addCleanup(patcher.stop)
+            if target.endswith("success"):
+                self.successes = mock
             if target.endswith("error"):
                 self.errors = mock
         patcher = patch("tools.model_config_dialog.resource_path",
@@ -43,6 +45,34 @@ class ModelConfigDialogTest(unittest.TestCase):
         self.dialogs.append(dialog)
         self.errors.assert_not_called()
         return dialog
+
+    def test_connection_only_checks_model_list_and_explains_scope(self):
+        self.write_config("自定义")
+        original = self.config_path.read_bytes()
+        dialog = self.open_dialog()
+        sdk = MagicMock()
+        with patch.dict("sys.modules", {"openai": sdk}):
+            dialog.testButton.click()
+        sdk.OpenAI.assert_called_once_with(api_key="test-only-key", base_url="https://example.invalid/v1")
+        client = sdk.OpenAI.return_value
+        client.models.list.assert_called_once_with()
+        client.chat.completions.create.assert_not_called()
+        self.assertIn("尚未验证", self.successes.call_args.kwargs["content"])
+        self.assertIn("不发送图片", dialog.testButton.toolTip())
+        self.errors.assert_not_called()
+        self.assertEqual(self.config_path.read_bytes(), original)
+
+    def test_model_list_failure_does_not_fall_back_to_inference(self):
+        self.write_config("自定义")
+        dialog = self.open_dialog()
+        sdk = MagicMock()
+        sdk.OpenAI.return_value.models.list.side_effect = RuntimeError("404 models endpoint")
+        with patch.dict("sys.modules", {"openai": sdk}):
+            dialog.test_connection()
+        sdk.OpenAI.return_value.chat.completions.create.assert_not_called()
+        self.successes.assert_not_called()
+        self.assertIn("404 models endpoint", self.errors.call_args.kwargs["content"])
+        self.assertIn("不代表视觉识别接口不可用", self.errors.call_args.kwargs["content"])
 
     def test_saved_settings_survive_open_confirm_and_reopen(self):
         for provider in ("硅基流动", "自定义"):
