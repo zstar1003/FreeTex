@@ -434,8 +434,9 @@ class MainWindow(QMainWindow):
         self.logger.info(f"接收到model_loaded信号. 设备: {device_info}")
         if "失败" in device_info:
             self.modelStatus.setLoadingFailed(device_info)
-            self.uploadButton.setEnabled(False)
-            self.screenshotButton.setEnabled(False)
+            # Cloud recognition may still work without the local model.
+            self.uploadButton.setEnabled(True)
+            self.screenshotButton.setEnabled(True)
             tooltip_text = f"模型加载失败: {device_info}"
             tooltip_state = False
         else:
@@ -652,12 +653,10 @@ class MainWindow(QMainWindow):
             self.logger.debug(f"存储原始图片大小: {self.original_pixmap.size()}")
 
             self._scale_and_display_image()
-            if self.local_processor.model is not None:
-                self.latexEdit.setText("正在识别图像...")
-                self.process_request.emit(pixmap)
-            else:
-                self.latexEdit.setText("模型尚未加载，请稍候...")
-                self.logger.warning("无法处理图片: 模型尚未加载完成")
+            # The processor selects the configured backend and checks only
+            # that backend's readiness. Cloud mode does not require a local model.
+            self.latexEdit.setText("正在识别图像...")
+            self.process_request.emit(pixmap)
 
         else:
             self.logger.warning("显示图片: 接收到无效或空图片")
@@ -786,6 +785,15 @@ class MainWindow(QMainWindow):
 
         # 更新 LaTeX 文本框
         self.latexEdit.setText(result)
+        if result.startswith("识别失败:"):
+            self.current_latex = ""
+            self.renderView.setHtml("<html><body><center>识别失败，请检查设置后重试</center></body></html>")
+            self.update_copy_button_state()
+            tooltip = StateToolTip("识别失败", result, self)
+            tooltip.setState(False)
+            tooltip.move(self.width() - tooltip.width() - 10, 10)
+            tooltip.show()
+            return
 
         # 更新渲染窗口
         try:

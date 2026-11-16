@@ -190,7 +190,7 @@ class LocalProcessor(QObject):
             self.logger.info(f"路径识别结果:\n{result}")
             self.finished.emit(result)
         except Exception as e:
-            error_msg = f"识别失败 (路径): {str(e)}"
+            error_msg = f"识别失败: 路径处理错误: {str(e)}"
             self.logger.error(error_msg)
             self.finished.emit(error_msg)
 
@@ -262,55 +262,36 @@ class LocalProcessor(QObject):
             return None
 
     def process_pixmap(self, pixmap):
-        """处理QPixmap图像"""
+        """Route by configured provider; never silently replace cloud failures."""
         try:
-            if self.model is None or self.vis_processor is None:
-                self.finished.emit("模型未加载，无法处理图像")
-                return
+            if getattr(sys, "frozen", False):
+                config_path = os.path.join(sys._MEIPASS, "config.json")
+            else:
+                config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config.json")
+            # Invalid/unreadable configuration is an error, not permission to
+            # silently choose a different recognition backend.
+            with open(config_path, "r", encoding="utf-8") as f:
+                model_config = json.load(f).get("model_config", {})
+            use_multimodal = model_config.get("enabled", False)
+            if not use_multimodal and (self.model is None or self.vis_processor is None):
+                raise RuntimeError("模型未加载，无法处理图像")
 
-            # 预处理图像
             processed_pixmap = self.preprocess_image(pixmap)
             if processed_pixmap is None:
-                self.finished.emit("图像预处理失败")
-                return
-
-            # 将QPixmap转换为PIL Image用于模型处理
+                raise RuntimeError("图像预处理失败")
             pil_image = self._pixmap_to_pil(processed_pixmap)
             if pil_image is None:
-                self.finished.emit("图像转换失败")
-                return
+                raise RuntimeError("图像转换失败")
 
-            # 检查是否启用多模态识别
-            try:
-                # 使用正确的配置文件路径
-                if getattr(sys, "frozen", False):
-                    config_path = os.path.join(sys._MEIPASS, "config.json")
-                else:
-                    config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config.json")
-
-                with open(config_path, "r", encoding="utf-8") as f:
-                    config = json.load(f)
-                    model_config = config.get("model_config", {})
-                    if model_config.get("enabled", False):
-                        # 使用多模态识别
-                        result = self._process_with_multimodal(pil_image, model_config)
-                    else:
-                        # 使用本地模型识别
-                        image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
-                        with torch.no_grad():
-                            output = self.model.generate({"image": image_tensor})
-                        result = output["pred_str"][0]
-            except Exception as e:
-                self.logger.error(f"配置读取失败，使用本地模型: {str(e)}")
-                # 使用本地模型识别
+            if use_multimodal:
+                result = self._process_with_multimodal(pil_image, model_config)
+            else:
                 image_tensor = self.vis_processor(pil_image).unsqueeze(0).to(self.device)
                 with torch.no_grad():
                     output = self.model.generate({"image": image_tensor})
                 result = output["pred_str"][0]
-
             self.logger.info(f"识别结果: {result}")
             self.finished.emit(result)
-
         except Exception as e:
             self.logger.error(f"图像处理失败: {str(e)}")
             self.finished.emit(f"识别失败: {str(e)}")

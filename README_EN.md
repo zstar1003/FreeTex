@@ -102,3 +102,7 @@ Thanks to the contributors to this project:
 The **测试模型列表** (Test model list) button only requests `/models` from the configured service. It does not upload an image or run model inference. Success does not verify the selected model's vision capabilities; failure may only mean the service does not support listing models. Actual recognition sends the selected model and image to `/chat/completions` and must be verified separately.
 
 The check runs in the background and ignores repeated clicks while pending. Network timeouts are set to 10 seconds with automatic retries disabled. Closing the dialog does not wait for the request or show its late result; an already-started read-only request finishes in the background and closes its client. This is a network-operation timeout, not a strict total-duration deadline. Exiting the entire application may still wait for outstanding pool tasks to finish.
+
+### Recognition routing and failures
+
+With multimodal recognition enabled, requests no longer require a successfully loaded local model. Provider errors or unreadable configuration are displayed as recognition failures, without silently switching to local inference, announcing success or enabling copying of error text. To use local recognition, disable multimodal recognition in settings. Local model initialization still follows the existing startup flow; this change does not skip startup loading or validate live provider compatibility.
