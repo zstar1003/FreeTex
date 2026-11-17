@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="version">
+  <img src="https://img.shields.io/badge/installer-1.0.0-blue" alt="installer version">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL3.0-green" alt="License"></a>
   <h4>
     <a href="README.md">🇨🇳 Chinese</a>
@@ -26,6 +26,9 @@ Want to edit the recognition result? You can check out my tool station: https://
 
 ### 1. Quick use
 
+> [!IMPORTANT]
+> The GitHub download links below point to **v1.0.0 installers**, not the current `main` source. The background model-list check, recognition error handling and user-profile settings migration described later are source updates, not a promise that the old installers include them. A version string of `1.0.0` alone does not establish identical code; distinguish source commits from release notes.
+
 1. Download software
 
 - windows system:
@@ -37,6 +40,9 @@ Want to edit the recognition result? You can check out my tool station: https://
 
   - Method 1: Direct download: [Github](https://github.com/zstar1003/FreeTex/releases/download/v1.0.0/FreeTex-Installer-1.0.0.dmg)
   - Method 2: Install using Homebrew: `brew install freetex`
+
+  > [!NOTE]
+  > See [issue #44](https://github.com/zstar1003/FreeTex/issues/44) for the v1.0.0 macOS installer's `No module named 'openai'` issue and the maintainer's historical patch. That patch addresses missing dependencies; it does not imply inclusion of current source fixes.
 
 
 2. Install the software and start using it
@@ -97,6 +103,12 @@ Thanks to the contributors to this project:
 ## Star History
 
 ![Star History](https://starchart.cc/zstar1003/FreeTex.svg)
+## Current main source behavior (not a v1.0.0 installer guarantee)
+
+The following describes `main` after [PR #52](https://github.com/zstar1003/FreeTex/pull/52), [PR #53](https://github.com/zstar1003/FreeTex/pull/53), [PR #54](https://github.com/zstar1003/FreeTex/pull/54) and [PR #55](https://github.com/zstar1003/FreeTex/pull/55). It does not automatically apply to the `win` branch or older releases.
+
+This documentation review checked source, release asset metadata and the issue only. It did not directly install or validate the DMG/EXE, historical patch, signing or notarization. Merging source changes does not replace existing release assets or mean that a new complete installer has been published.
+
 ### Multimodal connection check
 
 The **测试模型列表** (Test model list) button only requests `/models` from the configured service. It does not upload an image or run model inference. Success does not verify the selected model's vision capabilities; failure may only mean the service does not support listing models. Actual recognition sends the selected model and image to `/chat/completions` and must be verified separately.

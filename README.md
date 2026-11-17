@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/版本-1.0.0-blue" alt="版本">
+  <img src="https://img.shields.io/badge/安装包-1.0.0-blue" alt="安装包版本">
   <a href="LICENSE"><img src="https://img.shields.io/badge/许可证-AGPL3.0-green" alt="许可证"></a>
   <h4>
     <a href="README.md">🇨🇳 中文</a>
@@ -26,6 +26,9 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
 
 ### 1. 快速使用
 
+> [!IMPORTANT]
+> 下方 GitHub 下载链接指向 **v1.0.0 安装包**，不等同于当前 `main` 源码。后文的后台模型列表检查、识别错误处理和用户目录设置迁移属于源码更新，不能据此认为旧安装包已包含这些修复。版本号仍为 `1.0.0` 也不能证明代码一致；请以源码提交和发布说明区分。
+
 1. 下载软件
 
 - windows系统：
@@ -38,7 +41,7 @@ FreeTex是一个免费的公式智能识别软件，它可以识别图像中的�
   - 方式一；直接下载：[Github](https://github.com/zstar1003/FreeTex/releases/download/v1.0.0/FreeTex-Installer-1.0.0.dmg)
   - 方式二；用Homebrew进行安装：`brew install freetex`
   > [!NOTE]
-  > mac版本使用多模态模型时，会出现`No module named 'openai'`这个问题，解决方式见[issue#44](https://github.com/zstar1003/FreeTex/issues/44)
+  > v1.0.0 macOS 安装包的 `No module named 'openai'` 问题及维护者提供的历史补丁见 [issue #44](https://github.com/zstar1003/FreeTex/issues/44)。该补丁针对缺失依赖，不代表包含当前源码修复。
 
 
 2. 安装软件，开始使用
@@ -99,6 +102,12 @@ python main.py
 ## Star History
 
 ![Star History](https://starchart.cc/zstar1003/FreeTex.svg)
+## 当前 main 源码行为（非 v1.0.0 安装包承诺）
+
+以下说明对应 [PR #52](https://github.com/zstar1003/FreeTex/pull/52)、[PR #53](https://github.com/zstar1003/FreeTex/pull/53)、[PR #54](https://github.com/zstar1003/FreeTex/pull/54) 和 [PR #55](https://github.com/zstar1003/FreeTex/pull/55) 合入后的 `main`；不自动适用于 `win` 分支或旧 release。
+
+本次仅核对源码、发布资产元数据和 issue，未直接安装验证 DMG/EXE、历史补丁、签名或公证。源码合并不会替换已有发布资产，也不表示新版完整安装包已经发布。
+
 ### 多模态设置中的连接检查
 
 “测试模型列表”仅请求配置服务的 `/models`，不发送图片、不执行模型推理。成功不代表所选模型支持视觉识别；失败也可能仅表示服务不支持模型列表接口。实际识别通过 `/chat/completions` 发送所选模型和图片，需要单独验证。
